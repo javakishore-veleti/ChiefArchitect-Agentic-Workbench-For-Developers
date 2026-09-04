@@ -1,0 +1,3 @@
+# Ingestion and Lakeflow
+
+Identify source, connector, checkpoint, target, schema evolution policy, ordering key, watermark, duplicate key, throughput, and freshness SLO. Inspect pipeline/job event logs, update/run state, data-quality expectations, rejected rows, backlog, source limits, and checkpoint/storage access. Distinguish Lakeflow Connect, Spark Declarative Pipelines, Jobs, Auto Loader, Structured Streaming, federation, and direct ingestion. Verify each connector and Real-Time Mode availability for the workspace; do not infer availability from an announcement. Preserve replay and idempotency before resetting checkpoints or performing a full refresh.

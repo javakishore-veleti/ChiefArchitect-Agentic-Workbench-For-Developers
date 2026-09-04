@@ -1,0 +1,35 @@
+{"area":"architecture-medallion","type":"docs","title":"Medallion lakehouse architecture","url":"https://docs.databricks.com/aws/en/lakehouse/medallion","use":"layer design and tradeoffs"}
+{"area":"architecture-medallion","type":"docs","title":"Reference architectures","url":"https://docs.databricks.com/aws/en/lakehouse-architecture/reference","use":"architecture assessment"}
+{"area":"ingestion-lakeflow","type":"announcement","title":"Lakeflow 2026 announcements","url":"https://www.databricks.com/blog/lakeflow-new-era-agentic-data-engineering","use":"time-qualified 2026 capabilities"}
+{"area":"ingestion-lakeflow","type":"docs","title":"Lakeflow Connect","url":"https://docs.databricks.com/aws/en/ingestion/lakeflow-connect/","use":"connector behavior"}
+{"area":"ingestion-lakeflow","type":"docs","title":"Lakeflow Declarative Pipelines","url":"https://docs.databricks.com/aws/en/ldp/","use":"pipeline diagnosis"}
+{"area":"ingestion-lakeflow","type":"docs","title":"Lakeflow Jobs","url":"https://docs.databricks.com/aws/en/jobs/","use":"orchestration diagnosis"}
+{"area":"ingestion-lakeflow","type":"docs","title":"Auto Loader","url":"https://docs.databricks.com/aws/en/ingestion/cloud-object-storage/auto-loader/","use":"file ingestion"}
+{"area":"ingestion-lakeflow","type":"community","title":"Serverless requirement for Lakeflow Connect","url":"https://community.databricks.com/t5/data-engineering/is-it-required-to-run-lakeflow-connect-on-serverless/td-p/152489","use":"community-reported setup question"}
+{"area":"ingestion-lakeflow","type":"community","title":"Promote Connect and declarative pipelines","url":"https://community.databricks.com/t5/data-engineering/how-to-promote-lakeflow-connect-and-spark-declarative-pipeline/td-p/160970","use":"community-reported promotion concern"}
+{"area":"ingestion-lakeflow","type":"community","title":"Pipeline performance","url":"https://community.databricks.com/t5/data-engineering/lakeflow-pipeline-formerly-dlt-pipeline-performance/m-p/126877","use":"community-reported performance symptom"}
+{"area":"governance-unity-catalog","type":"docs","title":"Unity Catalog","url":"https://docs.databricks.com/aws/en/data-governance/unity-catalog/","use":"governance model"}
+{"area":"governance-unity-catalog","type":"docs","title":"Unity Catalog privileges","url":"https://docs.databricks.com/aws/en/data-governance/unity-catalog/manage-privileges/","use":"effective access"}
+{"area":"governance-unity-catalog","type":"docs","title":"Lineage","url":"https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-lineage","use":"impact and provenance"}
+{"area":"governance-unity-catalog","type":"community","title":"Unable to access Unity Catalog from cluster","url":"https://community.databricks.com/t5/data-engineering/unable-to-access-unity-catalog-from-cluster-in-azure-databricks/m-p/112546","use":"community-reported access symptom"}
+{"area":"compute-serverless","type":"docs","title":"Serverless compute","url":"https://docs.databricks.com/aws/en/compute/serverless/","use":"availability and constraints"}
+{"area":"compute-serverless","type":"docs","title":"Compute configuration reference","url":"https://docs.databricks.com/aws/en/compute/configure","use":"classic compute diagnosis"}
+{"area":"compute-serverless","type":"docs","title":"Photon","url":"https://docs.databricks.com/aws/en/compute/photon","use":"execution engine assessment"}
+{"area":"compute-serverless","type":"community","title":"Serverless compute sharing across notebooks","url":"https://community.databricks.com/t5/data-engineering/understanding-serverless-compute-sharing-across-notebooks-in/td-p/120778","use":"community-reported isolation question"}
+{"area":"sql-bi","type":"docs","title":"Query profile","url":"https://docs.databricks.com/aws/en/sql/user/queries/query-profile","use":"SQL bottleneck evidence"}
+{"area":"sql-bi","type":"docs","title":"SQL warehouses","url":"https://docs.databricks.com/aws/en/compute/sql-warehouse/","use":"warehouse diagnosis"}
+{"area":"sql-bi","type":"docs","title":"AI BI Genie","url":"https://docs.databricks.com/aws/en/genie/","use":"semantic assistant governance"}
+{"area":"ai-ml-serving","type":"announcement","title":"AI platform 2026 announcements","url":"https://www.databricks.com/blog/whats-new-ai-platform-agents-ml-engineering-our-deep-learning-platform-and-new-capabilities","use":"time-qualified 2026 capabilities"}
+{"area":"ai-ml-serving","type":"docs","title":"Model Serving","url":"https://docs.databricks.com/aws/en/machine-learning/model-serving/","use":"serving diagnosis"}
+{"area":"ai-ml-serving","type":"docs","title":"Feature engineering","url":"https://docs.databricks.com/aws/en/machine-learning/feature-store/","use":"feature freshness"}
+{"area":"ai-ml-serving","type":"docs","title":"Vector Search","url":"https://docs.databricks.com/aws/en/generative-ai/vector-search","use":"index diagnosis"}
+{"area":"ai-ml-serving","type":"docs","title":"MLflow","url":"https://docs.databricks.com/aws/en/mlflow/","use":"model lifecycle"}
+{"area":"ai-ml-serving","type":"community","title":"Serving endpoint container image creation","url":"https://community.databricks.com/t5/machine-learning/serving-endpoint-container-image-creation/m-p/125963","use":"community-reported provisioning symptom"}
+{"area":"sharing-interoperability","type":"docs","title":"Delta Sharing","url":"https://docs.databricks.com/aws/en/delta-sharing/","use":"share diagnosis"}
+{"area":"sharing-interoperability","type":"docs","title":"Lakehouse Federation","url":"https://docs.databricks.com/aws/en/query-federation/","use":"federated access"}
+{"area":"sharing-interoperability","type":"docs","title":"Iceberg tables","url":"https://docs.databricks.com/aws/en/iceberg/","use":"format interoperability"}
+{"area":"reliability-cost","type":"docs","title":"System tables","url":"https://docs.databricks.com/aws/en/admin/system-tables/","use":"operational evidence"}
+{"area":"reliability-cost","type":"docs","title":"Billing system table","url":"https://docs.databricks.com/aws/en/admin/system-tables/billing","use":"cost evidence"}
+{"area":"workspace-networking","type":"docs","title":"Network security","url":"https://docs.databricks.com/aws/en/security/network/","use":"network diagnosis"}
+{"area":"workspace-networking","type":"docs","title":"OAuth machine-to-machine","url":"https://docs.databricks.com/aws/en/dev-tools/auth/oauth-m2m","use":"service principal authentication"}
+{"area":"platform-2026","type":"press-release","title":"Data AI Summit 2026 dates","url":"https://www.databricks.com/company/newsroom/press-releases/databricks-announces-2026-data-ai-summit-keynote-lineup-and","use":"event timing and scope"}

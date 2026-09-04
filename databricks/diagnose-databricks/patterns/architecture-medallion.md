@@ -1,0 +1,3 @@
+# Architecture and medallion
+
+Map sources, freshness, contracts, ownership, consumers, recovery objectives, and regulatory boundaries before choosing a pattern. Medallion is recommended, not mandatory: bronze preserves replayable source fidelity; silver validates, deduplicates, normalizes, handles late data, and quarantines failures; gold publishes governed business products and aggregates. Do not use layer names as substitutes for contracts or ownership. Check Delta/Iceberg format needs, batch versus streaming latency, domain ownership, interoperability, and reprocessing paths. For mesh/fabric/vault/warehouse patterns, record why they complement or replace medallion and how governance remains centralized.

@@ -1,0 +1,3 @@
+# AI, ML, features, vectors, and serving
+
+Resolve experiment/run, registered model and version, serving endpoint/config, feature tables, vector index, source table, embedding endpoint, request ID, and monitoring window. Inspect MLflow artifacts, environment dependencies, build/deployment events, endpoint logs, inference tables, latency/error/QPS, scale-to-zero, feature freshness, and index synchronization. Distinguish training, packaging, provisioning, routing, and model failures. Verify preview features and region support. Do not send production prompts, protected data, or model artifacts to unapproved services.

@@ -1,0 +1,22 @@
+{
+  "schema-version": 1,
+  "configs-envs-mapping": [
+    { "config-name": "platform-a", "envs": ["dev", "qa", "staging", "production"] }
+  ],
+  "configs": [
+    {
+      "config-name": "platform-a",
+      "organization": "example-org",
+      "repositories": [
+        {
+          "name": "service-a",
+          "workflows": ["build.yml", "test.yml", "deploy.yml"],
+          "environments": {
+            "dev": { "runner-groups": ["nonprod"], "cloud-audience": "api://example-dev" },
+            "production": { "runner-groups": ["prod"], "cloud-audience": "api://example-prod" }
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "build": "build-test.md",
+  "test": "build-test.md",
+  "security": "security-supply-chain.md",
+  "supply-chain": "security-supply-chain.md",
+  "deploy": "deploy-rollback.md",
+  "rollback": "deploy-rollback.md",
+  "runner": "runners.md",
+  "reusable-workflow": "reusable-workflows.md",
+  "oidc": "oidc-environments.md",
+  "environment": "oidc-environments.md",
+  "artifact": "artifacts-cache.md",
+  "cache": "artifacts-cache.md",
+  "observability": "observability-cost.md",
+  "cost": "observability-cost.md"
+}

@@ -1,0 +1,20 @@
+{
+  "configs-envs-mapping": [
+    {"config-name":"platform-a","envs":["dev","qa","staging","prod"]}
+  ],
+  "configs": [
+    {
+      "config-name":"platform-a",
+      "account":{"cloud":"azure","account-id":"${DATABRICKS_ACCOUNT_ID}"},
+      "workspaces":[{"name":"workspace-a","workspace-id":"${DATABRICKS_WORKSPACE_ID}","host":"${DATABRICKS_HOST}","region":"region-a"}],
+      "environments":{
+        "dev":{"workspace":"workspace-a","catalog":"dev_catalog","schema":"default"},
+        "qa":{"workspace":"workspace-a","catalog":"qa_catalog","schema":"default"},
+        "staging":{"workspace":"workspace-a","catalog":"staging_catalog","schema":"default"},
+        "prod":{"workspace":"workspace-a","catalog":"prod_catalog","schema":"default"}
+      },
+      "workloads":[{"name":"example-pipeline","type":"lakeflow-pipeline","environment":"dev","resource-id":"replace-me"}],
+      "auth":{"method":"environment","secret-ref":"DATABRICKS_TOKEN"}
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "routes": [
+    {"id":"logs","keywords":["log","pipeline","index","retention","ingestion"],"file":"logs.md"},
+    {"id":"traces-apm","keywords":["trace","apm","span","sampling","latency","service map"],"file":"traces-apm.md"},
+    {"id":"metrics","keywords":["metric","cardinality","timeseries","distribution","histogram"],"file":"metrics.md"},
+    {"id":"rum-synthetics","keywords":["rum","browser","mobile","session replay","synthetic","test"],"file":"rum-synthetics.md"},
+    {"id":"dashboards-monitors","keywords":["dashboard","monitor","alert","slo","no data"],"file":"dashboards-monitors.md"},
+    {"id":"incidents","keywords":["incident","outage","timeline","postmortem","on-call"],"file":"incidents.md"},
+    {"id":"ai-observability","keywords":["llm","agent","prompt","token","model","bits ai","eval"],"file":"ai-observability.md"},
+    {"id":"security-cost","keywords":["security","siem","sensitive","cost","usage","billing","finops"],"file":"security-cost.md"}
+  ],
+  "fallback":"cross-signal.md"
+}

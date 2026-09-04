@@ -1,0 +1,13 @@
+{
+  "routes": [
+    {"id":"architecture-medallion","match":["medallion","bronze","silver","gold","lakehouse","architecture"],"file":"architecture-medallion.md"},
+    {"id":"ingestion-lakeflow","match":["ingestion","lakeflow","pipeline","cdc","streaming","zerobus","autoloader"],"file":"ingestion-lakeflow.md"},
+    {"id":"governance-unity-catalog","match":["unity catalog","governance","permission","lineage","policy","catalog"],"file":"governance-unity-catalog.md"},
+    {"id":"compute-serverless","match":["compute","cluster","serverless","photon","runtime","warehouse"],"file":"compute-serverless.md"},
+    {"id":"sql-bi","match":["sql","query","dashboard","genie","power bi","semantic"],"file":"sql-bi.md"},
+    {"id":"ai-ml-serving","match":["model","mlflow","serving","feature","vector","agent","ai runtime"],"file":"ai-ml-serving.md"},
+    {"id":"sharing-interoperability","match":["delta sharing","share","iceberg","federation","foreign catalog"],"file":"sharing-interoperability.md"},
+    {"id":"reliability-cost","match":["cost","billing","failed","slow","reliability","quota","capacity"],"file":"reliability-cost.md"},
+    {"id":"workspace-networking","match":["workspace","network","private link","storage","identity","oauth"],"file":"workspace-networking.md"}
+  ]
+}

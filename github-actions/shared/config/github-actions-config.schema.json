@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["configs-envs-mapping", "configs"],
+  "properties": {
+    "configs-envs-mapping": { "type": "array", "items": { "type": "object", "required": ["config-name", "envs"] } },
+    "configs": { "type": "array", "items": { "type": "object", "required": ["config-name", "organization", "repositories"] } }
+  }
+}

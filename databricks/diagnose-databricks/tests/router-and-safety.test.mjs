@@ -1,0 +1,7 @@
+import test from 'node:test'; import assert from 'node:assert/strict'; import fs from 'node:fs'; import {spawnSync} from 'node:child_process'; import path from 'node:path';
+const root=path.resolve(import.meta.dirname,'..');
+test('routes are unique and files exist',()=>{const x=JSON.parse(fs.readFileSync(path.join(root,'patterns/index.json')));assert.equal(new Set(x.routes.map(r=>r.id)).size,x.routes.length);for(const r of x.routes)assert.ok(fs.existsSync(path.join(root,'patterns',r.file)))});
+test('safe plan passes',()=>{const r=spawnSync(process.execPath,[path.join(root,'scripts/validate-plan.mjs')],{input:JSON.stringify({commands:['databricks jobs get --job-id 1']})});assert.equal(r.status,0)});
+test('mutation is blocked',()=>{const r=spawnSync(process.execPath,[path.join(root,'scripts/validate-plan.mjs')],{input:JSON.stringify({commands:['databricks jobs delete --job-id 1']})});assert.equal(r.status,2)});
+test('secrets are redacted',()=>{const r=spawnSync(process.execPath,[path.join(root,'scripts/redact.mjs')],{input:'token=dapi12345678901234567890'});assert.ok(r.stdout.toString().includes('[REDACTED]'));assert.ok(!r.stdout.toString().includes('123456'))});
+test('evidence URLs are unique official sources',()=>{const lines=fs.readFileSync(path.join(root,'knowledge/evidence.jsonl'),'utf8').trim().split('\n').map(JSON.parse);assert.equal(new Set(lines.map(x=>x.url)).size,lines.length);for(const x of lines)assert.match(x.url,/^https:\/\/(docs|community|www)\.databricks\.com\//)});
