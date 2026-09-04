@@ -1,0 +1,5 @@
+query ProductByHandle($query: String!) {
+  products(first: 10, query: $query) {
+    nodes { id handle title status updatedAt variants(first: 25) { nodes { id sku title } } }
+  }
+}

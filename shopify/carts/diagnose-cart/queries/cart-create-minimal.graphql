@@ -1,0 +1,7 @@
+mutation CartCreateMinimal($input: CartInput!) {
+  cartCreate(input: $input) {
+    cart { id createdAt updatedAt totalQuantity checkoutUrl }
+    userErrors { field message code }
+    warnings { code message target }
+  }
+}

@@ -1,0 +1,14 @@
+query OrderDiscountEvidence($id: ID!) {
+  order(id: $id) {
+    id
+    currencyCode
+    presentmentCurrencyCode
+    discountCode
+    discountApplications(first: 20) {
+      nodes { __typename allocationMethod targetSelection targetType value { __typename ... on MoneyV2 { amount currencyCode } ... on PricingPercentageValue { percentage } } }
+    }
+    lineItems(first: 50) {
+      nodes { id sku quantity discountAllocations { allocatedAmountSet { shopMoney { amount currencyCode } presentmentMoney { amount currencyCode } } } }
+    }
+  }
+}

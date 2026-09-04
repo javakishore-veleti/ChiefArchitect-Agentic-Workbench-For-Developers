@@ -1,0 +1,15 @@
+query FindDiscounts($first: Int!, $query: String!) {
+  discountNodes(first: $first, query: $query) {
+    nodes {
+      id
+      discount {
+        __typename
+        ... on DiscountCodeBasic { title status startsAt endsAt }
+        ... on DiscountAutomaticBasic { title status startsAt endsAt }
+        ... on DiscountCodeApp { title status startsAt endsAt discountClasses }
+        ... on DiscountAutomaticApp { title status startsAt endsAt discountClasses }
+      }
+    }
+    pageInfo { hasNextPage endCursor }
+  }
+}

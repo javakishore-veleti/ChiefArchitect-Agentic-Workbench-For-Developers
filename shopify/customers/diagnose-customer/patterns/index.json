@@ -1,0 +1,10 @@
+{
+  "api-boundaries": ["which api", "wrong endpoint", "admin vs storefront", "customer account api", "legacy"],
+  "authentication-and-sessions": ["login", "oauth", "oidc", "pkce", "callback", "redirect", "nonce", "state", "token", "401", "unauthorized", "expired"],
+  "protected-data-and-scopes": ["protected customer data", "pii", "access denied", "scope", "firstName", "lastName", "email", "phone", "403"],
+  "identity-and-search": ["customer not found", "duplicate customer", "email search", "phone search", "gid", "external id", "customerSet"],
+  "profile-and-addresses": ["address", "default address", "profile", "name", "phone", "update customer"],
+  "legacy-account-flows": ["customerAccessTokenCreate", "customerCreate", "password", "multipass", "legacy account", "invalid credentials"],
+  "b2b-and-context": ["b2b", "company", "company location", "catalog", "buyer context", "pricing"],
+  "consistency-and-webhooks": ["webhook", "stale", "eventual", "deleted", "merge", "different environment", "wrong shop"]
+}

@@ -1,0 +1,18 @@
+query OrderDiagnostic($id: ID!) {
+  order(id: $id) {
+    id name createdAt updatedAt test confirmed closed cancelledAt cancelReason
+    displayFinancialStatus displayFulfillmentStatus returnStatus
+    merchantEditable merchantEditableErrors
+    currencyCode presentmentCurrencyCode
+    currentSubtotalPriceSet { shopMoney { amount currencyCode } presentmentMoney { amount currencyCode } }
+    currentTotalDiscountsSet { shopMoney { amount currencyCode } presentmentMoney { amount currencyCode } }
+    currentTotalPriceSet { shopMoney { amount currencyCode } presentmentMoney { amount currencyCode } }
+    totalOutstandingSet { shopMoney { amount currencyCode } presentmentMoney { amount currencyCode } }
+    totalRefundedSet { shopMoney { amount currencyCode } presentmentMoney { amount currencyCode } }
+    lineItems(first: 50) { nodes { id name sku quantity currentQuantity refundableQuantity } pageInfo { hasNextPage endCursor } }
+    fulfillmentOrders(first: 25) { nodes { id status requestStatus assignedLocation { location { id name } } lineItems(first: 50) { nodes { id totalQuantity remainingQuantity lineItem { id sku } } } } pageInfo { hasNextPage endCursor } }
+    transactions(first: 50) { id kind status gateway amountSet { shopMoney { amount currencyCode } presentmentMoney { amount currencyCode } } parentTransaction { id } processedAt }
+    refunds(first: 25) { id createdAt totalRefundedSet { shopMoney { amount currencyCode } presentmentMoney { amount currencyCode } } }
+    returns(first: 25) { nodes { id status name } pageInfo { hasNextPage endCursor } }
+  }
+}

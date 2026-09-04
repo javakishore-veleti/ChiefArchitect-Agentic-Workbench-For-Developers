@@ -1,0 +1,12 @@
+{
+  "patterns": [
+    {"id":"creation-and-schema","file":"creation-and-schema.md","keywords":["create","update","mutation","usererror","field","schema","version","graphql"]},
+    {"id":"code-eligibility","file":"code-eligibility.md","keywords":["code","invalid","rejected","discarded","customer","segment","eligibility","usage"]},
+    {"id":"automatic-and-schedule","file":"automatic-and-schedule.md","keywords":["automatic","active","schedule","start","end","recurring","cycle"]},
+    {"id":"functions-runtime","file":"functions-runtime.md","keywords":["function","target","run","wasm","metafield","variable","deploy","cli"]},
+    {"id":"combinations-and-classes","file":"combinations-and-classes.md","keywords":["combine","combination","stack","class","product","order","shipping"]},
+    {"id":"markets-b2b-context","file":"markets-b2b-context.md","keywords":["market","country","currency","b2b","company","catalog","pos","channel"]},
+    {"id":"allocations-and-reporting","file":"allocations-and-reporting.md","keywords":["allocation","application","amount","sales","report","order","lineitem"]},
+    {"id":"cart-checkout-effects","file":"cart-checkout-effects.md","keywords":["cart","checkout","hydrogen","storefront","delivery","address"]}
+  ]
+}

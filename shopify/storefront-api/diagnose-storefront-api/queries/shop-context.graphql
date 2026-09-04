@@ -1,0 +1,4 @@
+query StorefrontContext($country: CountryCode, $language: LanguageCode) @inContext(country: $country, language: $language) {
+  shop { name primaryDomain { host url } }
+  localization { country { isoCode currency { isoCode } } language { isoCode } availableCountries { isoCode } }
+}

@@ -1,0 +1,6 @@
+query OrdersByReference($query: String!, $first: Int = 20) {
+  orders(first: $first, query: $query, sortKey: UPDATED_AT, reverse: true) {
+    nodes { id name createdAt updatedAt displayFinancialStatus displayFulfillmentStatus test }
+    pageInfo { hasNextPage endCursor }
+  }
+}

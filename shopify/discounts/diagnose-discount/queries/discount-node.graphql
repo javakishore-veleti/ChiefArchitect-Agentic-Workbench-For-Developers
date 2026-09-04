@@ -1,0 +1,13 @@
+query DiagnoseDiscountNode($id: ID!) {
+  discountNode(id: $id) {
+    id
+    metafields(first: 20) { nodes { namespace key type value } }
+    discount {
+      __typename
+      ... on DiscountCodeBasic { title status startsAt endsAt usageLimit appliesOncePerCustomer summary combinesWith { orderDiscounts productDiscounts shippingDiscounts } }
+      ... on DiscountAutomaticBasic { title status startsAt endsAt summary combinesWith { orderDiscounts productDiscounts shippingDiscounts } }
+      ... on DiscountCodeApp { title status startsAt endsAt discountClasses combinesWith { orderDiscounts productDiscounts shippingDiscounts } appDiscountType { functionId } }
+      ... on DiscountAutomaticApp { title status startsAt endsAt discountClasses combinesWith { orderDiscounts productDiscounts shippingDiscounts } appDiscountType { functionId } }
+    }
+  }
+}

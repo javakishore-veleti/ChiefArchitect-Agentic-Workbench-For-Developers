@@ -1,0 +1,9 @@
+{
+  "auth-access": "auth-access.md",
+  "context-localization": "context-localization.md",
+  "publication-visibility": "publication-visibility.md",
+  "version-schema": "version-schema.md",
+  "throttle-performance": "throttle-performance.md",
+  "hydrogen-runtime": "hydrogen-runtime.md",
+  "response-errors": "response-errors.md"
+}

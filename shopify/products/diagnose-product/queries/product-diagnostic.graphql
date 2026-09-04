@@ -1,0 +1,11 @@
+query ProductDiagnostic($id: ID!) {
+  product(id: $id) {
+    id handle title status updatedAt
+    options { id name optionValues { id name } }
+    variants(first: 50) {
+      nodes { id title sku selectedOptions { name value } inventoryItem { id tracked } }
+      pageInfo { hasNextPage endCursor }
+    }
+    media(first: 20) { nodes { id mediaContentType status ... on MediaImage { image { url } } } }
+  }
+}

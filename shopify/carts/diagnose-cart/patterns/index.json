@@ -1,0 +1,12 @@
+{
+  "creation": "creation.md",
+  "lines-inventory": "lines-inventory.md",
+  "buyer-identity": "buyer-identity.md",
+  "pricing-markets": "pricing-markets.md",
+  "discounts": "discounts.md",
+  "delivery": "delivery.md",
+  "lifecycle-checkout": "lifecycle-checkout.md",
+  "cart-transforms": "cart-transforms.md",
+  "hydrogen-sync": "hydrogen-sync.md",
+  "throttling-version": "throttling-version.md"
+}

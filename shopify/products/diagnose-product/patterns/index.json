@@ -1,0 +1,10 @@
+{"routing":[
+ {"id":"identity-search","title":"Identity and search","pattern":"identity-search.md","signals":["not found","null product","handle","sku search","wrong product","query filter","duplicate sku"]},
+ {"id":"variants-options","title":"Variants and options","pattern":"variants-options.md","signals":["variant","option","productvariantsbulk","2048","duplicate option","inventoryitem"]},
+ {"id":"create-update-set","title":"Create, update and productSet","pattern":"create-update-set.md","signals":["productcreate","productupdate","productset","usererrors","synchronous","asynchronous"]},
+ {"id":"inventory","title":"Inventory and availability","pattern":"inventory.md","signals":["inventory","available","location","quantity","tracked","inventory policy"]},
+ {"id":"media","title":"Media processing","pattern":"media.md","signals":["image","media","video","staged upload","alt text","reorder","file"]},
+ {"id":"metafields","title":"Metafields and metaobjects","pattern":"metafields.md","signals":["metafield","definition","json","namespace","owner type","validation"]},
+ {"id":"publication","title":"Publication and channel visibility","pattern":"publication.md","signals":["publish","publication","channel","not visible","unpublished","catalog"]},
+ {"id":"bulk-throttle","title":"Bulk operations and throttling","pattern":"bulk-throttle.md","signals":["bulk","jsonl","throttle","429","cost","timeout","egress","stuck"]}
+]}

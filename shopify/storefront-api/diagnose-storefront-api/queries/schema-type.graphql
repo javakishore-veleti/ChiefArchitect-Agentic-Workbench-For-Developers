@@ -1,0 +1,2 @@
+query InspectType($name: String!) { __type(name: $name) { name kind fields { name isDeprecated deprecationReason } } }
+

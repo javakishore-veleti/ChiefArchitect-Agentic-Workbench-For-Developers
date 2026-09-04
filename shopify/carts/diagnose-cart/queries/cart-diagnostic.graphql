@@ -1,0 +1,11 @@
+query CartDiagnostic($id: ID!) {
+  cart(id: $id) {
+    id createdAt updatedAt totalQuantity checkoutUrl
+    buyerIdentity { countryCode email phone customer { id } companyLocation { id } }
+    cost { subtotalAmount { amount currencyCode } totalAmount { amount currencyCode } totalTaxAmount { amount currencyCode } }
+    discountCodes { code applicable }
+    discountApplications { __typename ... on DiscountCodeApplication { code applicable } ... on AutomaticDiscountApplication { title } }
+    lines(first: 100) { nodes { id quantity attributes { key value } cost { totalAmount { amount currencyCode } } merchandise { ... on ProductVariant { id sku availableForSale quantityAvailable product { id handle } } } } pageInfo { hasNextPage endCursor } }
+    deliveryGroups(first: 20) { nodes { id groupType selectedDeliveryOption { handle title } deliveryOptions { handle title estimatedCost { amount currencyCode } } } pageInfo { hasNextPage endCursor } }
+  }
+}
