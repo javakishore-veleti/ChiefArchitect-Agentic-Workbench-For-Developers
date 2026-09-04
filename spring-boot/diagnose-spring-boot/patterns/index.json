@@ -1,0 +1,16 @@
+{
+  "schema-version": 1,
+  "patterns": [
+    {"id":"web-api","keywords":["http","rest","mvc","webflux","controller","404","400","500","serialization","cors"]},
+    {"id":"security","keywords":["security","oauth","oidc","jwt","authentication","authorization","401","403","csrf"]},
+    {"id":"data-jpa","keywords":["jpa","hibernate","repository","entity","jdbc","sql","datasource","query"]},
+    {"id":"transactions","keywords":["transaction","rollback","commit","deadlock","optimistic","pessimistic"]},
+    {"id":"configuration","keywords":["configuration","property","profile","binding","bean","autoconfiguration","startup"]},
+    {"id":"testing","keywords":["test","mockmvc","testcontainers","contextloads","slice","mock"]},
+    {"id":"actuator-observability","keywords":["actuator","health","metric","trace","log","micrometer","otel","observation"]},
+    {"id":"messaging-integration","keywords":["kafka","rabbit","amqp","message","consumer","producer","integration"]},
+    {"id":"batch","keywords":["batch","job","step","reader","writer","restart"]},
+    {"id":"caching","keywords":["cache","redis","caffeine","stale","evict","ttl"]},
+    {"id":"deployment-runtime","keywords":["kubernetes","container","pod","memory","cpu","probe","deployment","shutdown"]}
+  ]
+}

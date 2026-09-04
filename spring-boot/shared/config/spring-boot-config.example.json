@@ -1,0 +1,14 @@
+{
+  "schema-version": 1,
+  "configs-envs-mapping": [{"config-name":"portfolio-nonproduction","envs":["dev","qa","staging"]}],
+  "configs": [{
+    "config-name":"portfolio-nonproduction",
+    "applications":[{
+      "name":"service-a","profiles-by-env":{"dev":["dev"],"qa":["qa"],"staging":["staging"]},
+      "endpoints":{"base-url-template":"https://service-a.${env}.example.invalid","actuator-path":"/actuator"},
+      "repository":{"url":"https://github.com/example/portfolio","module":"services/service-a"},
+      "log-fields":{"correlation-id":"trace_id","application":"service.name"},
+      "credentials":[{"purpose":"diagnostic-api","secret-ref":{"provider":"environment","name-template":"SPRING_SERVICE_A_${env}_DIAGNOSTIC_TOKEN"}}]
+    }]
+  }]
+}

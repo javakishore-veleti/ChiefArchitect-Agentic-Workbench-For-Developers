@@ -1,0 +1,15 @@
+import test from 'node:test'; import assert from 'node:assert/strict'; import fs from 'node:fs';
+import {classify} from '../scripts/classify-spring-issue.mjs'; import {validatePlan} from '../scripts/validate-diagnostic-plan.mjs'; import {summarize} from '../scripts/summarize-diagnostics.mjs'; import {compare} from '../scripts/compare-contexts.mjs'; import {validateConfig,mergeConfig} from '../../shared/config/load-config.mjs'; import {resolveContext} from '../../shared/config/resolve-context.mjs'; import {resolveTerm} from '../../shared/vocabulary/resolve-term.mjs';
+const config=JSON.parse(fs.readFileSync(new URL('../../shared/config/spring-boot-config.example.json',import.meta.url)));
+const vocab=JSON.parse(fs.readFileSync(new URL('../../shared/vocabulary/application-vocabulary.example.json',import.meta.url)));
+test('routes security issue',()=>assert.equal(classify('JWT request returns 403').pattern,'security'));
+test('resolves arbitrary environment and service',()=>assert.equal(resolveContext(validateConfig(config),{environment:'qa',service:'service-a'}).application.endpoints['base-url-template'],'https://service-a.qa.example.invalid'));
+test('override replaces complete named config',()=>assert.equal(mergeConfig(config,{configs:[{'config-name':'portfolio-nonproduction',applications:[{name:'replacement'}]}]}).configs[0].applications[0].name,'replacement'));
+test('rejects embedded secrets',()=>assert.throws(()=>validateConfig({'schema-version':1,'configs-envs-mapping':[],configs:[{'config-name':'x',applications:[{name:'x',password:'plain'}]}]}),/secret references/));
+test('resolves exact business alias',()=>assert.equal(resolveTerm(vocab,'coverage check').service,'service-a'));
+test('unknown vocabulary fails',()=>assert.throws(()=>resolveTerm(vocab,'invented'),/Unknown/));
+test('allows sanitized health read',()=>assert.equal(validatePlan(['GET /actuator/health']).allowed,true));
+test('blocks actuator environment exposure',()=>assert.equal(validatePlan(['GET /actuator/env']).allowed,false));
+test('blocks database mutation',()=>assert.equal(validatePlan(['DELETE FROM account']).allowed,false));
+test('redacts nested credentials',()=>assert.equal(summarize({observations:[{token:'abc'}]}).observations[0].token,'[REDACTED]'));
+test('compares only matching probes',()=>assert.throws(()=>compare({service:'a',probe:'health'},{service:'a',probe:'metrics'}),/same probe/));

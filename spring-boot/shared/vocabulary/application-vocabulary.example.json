@@ -1,0 +1,1 @@
+{"schema-version":1,"terms":[{"term":"member eligibility","aliases":["eligibility","coverage check"],"service":"service-a","module":"services/service-a","endpoint":"GET /eligibility/{member-id}","log-fields":["trace_id","member_reference"]}]}
