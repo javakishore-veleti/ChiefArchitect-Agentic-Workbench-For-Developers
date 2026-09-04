@@ -1,0 +1,128 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/shopify-config.schema.json",
+  "title": "Shopify enterprise configuration routing",
+  "type": "object",
+  "required": [
+    "schema-version",
+    "configs-envs-mapping",
+    "configs"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema-version": {
+      "const": 1
+    },
+    "configs-envs-mapping": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "config-name",
+          "envs"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "config-name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "envs": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      }
+    },
+    "configs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "config-name",
+          "storefront",
+          "shopify",
+          "hydrogen-apps"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "config-name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "storefront": {
+            "type": "string",
+            "minLength": 1
+          },
+          "shopify": {
+            "type": "object",
+            "required": [
+              "admin-api-version",
+              "authentication"
+            ],
+            "properties": {
+              "shop-domain": {
+                "type": "string"
+              },
+              "shop-domain-template": {
+                "type": "string"
+              },
+              "admin-api-version": {
+                "type": "string"
+              },
+              "authentication": {
+                "type": "object"
+              }
+            },
+            "oneOf": [
+              {
+                "required": [
+                  "shop-domain"
+                ]
+              },
+              {
+                "required": [
+                  "shop-domain-template"
+                ]
+              }
+            ]
+          },
+          "hydrogen-apps": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "name"
+              ],
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "git-repository": {
+                  "type": "string"
+                },
+                "branch": {
+                  "type": "string"
+                },
+                "branch-template": {
+                  "type": "string"
+                },
+                "credential-profile": {
+                  "type": "string"
+                },
+                "credential-profile-template": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,1 @@
+import fs from 'node:fs/promises'; export async function get(ref){if(!ref.path)throw new Error('mounted-file provider requires path');const value=(await fs.readFile(ref.path,'utf8')).trim();if(!value)throw new Error('mounted secret file is empty');return value}

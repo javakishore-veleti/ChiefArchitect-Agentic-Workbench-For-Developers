@@ -1,0 +1,78 @@
+{
+  "schema-version": 1,
+  "configs-envs-mapping": [
+    {
+      "config-name": "storefront-a-nonproduction",
+      "envs": [
+        "dev",
+        "qa",
+        "staging"
+      ]
+    },
+    {
+      "config-name": "storefront-a-production",
+      "envs": [
+        "production"
+      ]
+    }
+  ],
+  "configs": [
+    {
+      "config-name": "storefront-a-nonproduction",
+      "storefront": "storefront-a",
+      "shopify": {
+        "shop-domain-template": "storefront-a-${env}.myshopify.com",
+        "admin-api-version": "2026-04",
+        "authentication": {
+          "mode": "client-credentials",
+          "client-id": {
+            "provider": "azure-key-vault",
+            "vault-name": "commerce-${env}",
+            "secret-name": "shopify-client-id"
+          },
+          "client-secret": {
+            "provider": "azure-key-vault",
+            "vault-name": "commerce-${env}",
+            "secret-name": "shopify-client-secret"
+          }
+        }
+      },
+      "hydrogen-apps": [
+        {
+          "name": "customer-portal",
+          "git-repository": "organization/customer-portal",
+          "branch-template": "${env}"
+        },
+        {
+          "name": "advisor-portal",
+          "git-repository": "organization/advisor-portal",
+          "branch-template": "${env}"
+        }
+      ]
+    },
+    {
+      "config-name": "storefront-a-production",
+      "storefront": "storefront-a",
+      "shopify": {
+        "shop-domain": "storefront-a.myshopify.com",
+        "admin-api-version": "2026-04",
+        "authentication": {
+          "mode": "offline-access-token",
+          "access-token": {
+            "provider": "hashicorp-vault",
+            "mount": "commerce",
+            "path": "production/storefront-a/shopify",
+            "field": "admin_access_token"
+          }
+        }
+      },
+      "hydrogen-apps": [
+        {
+          "name": "customer-portal",
+          "git-repository": "organization/customer-portal",
+          "branch": "main"
+        }
+      ]
+    }
+  ]
+}

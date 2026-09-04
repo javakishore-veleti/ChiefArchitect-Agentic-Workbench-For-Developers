@@ -1,14 +1,12 @@
 # Environment and storefront topology
 
-Treat these as independent axes:
+Use `shopify/shared/config/shopify-config.schema.json`. The required top-level model is:
 
-- technical environment: development, QA, staging, preproduction, production or another configured stage;
-- business storefront: any enterprise audience, portfolio, brand, region or channel;
-- Shopify shop: the Admin API security and resource boundary;
-- application: the custom app and scopes used for Admin API access;
-- Hydrogen application and deployment: a consumer of commerce data, not the Admin API boundary;
-- market, catalog and publication: visibility and contextual-pricing boundaries.
+- `configs-envs-mapping[]`: each `config-name` applies to one or more arbitrary environment names;
+- `configs[]`: named storefront configurations containing Shopify setup and zero or more Hydrogen applications.
 
-Discover mappings from approved configuration or platform APIs. Never encode an industry, storefront list or fixed environment sequence. One environment may contain several business storefronts; storefronts may share a shop or use separate shops.
+Resolve the requested environment to a named configuration. Multiple storefront configurations may apply to the same environment, so also use `config-name` or `storefront`; never guess an ambiguous match.
 
-Across shops, match resources using handles, SKU plus option identity, namespace/key, type/handle or an approved external ID. Record GIDs only as environment-local evidence.
+The Shopify shop owns Admin resources. Hydrogen apps consume commerce data and do not create separate Admin resource boundaries. A configuration can describe multiple Hydrogen apps, and a storefront can use different configurations across environment groups.
+
+Across shops, match resources using stable business identifiers such as handle, SKU plus option identity, metafield namespace/key, metaobject type/handle or an approved external ID. Treat Shopify GIDs as shop-local evidence.

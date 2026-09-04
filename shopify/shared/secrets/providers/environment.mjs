@@ -1,0 +1,1 @@
+export async function get(ref){const name=ref.variable;if(!name)throw new Error('environment provider requires variable');const value=process.env[name];if(!value)throw new Error('environment secret is unavailable: '+name);return value}
