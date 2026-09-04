@@ -59,11 +59,14 @@
             "type": "string",
             "minLength": 1
           },
+          "environment-variable-prefix": {
+            "type": "string",
+            "pattern": "^[A-Za-z_][A-Za-z0-9_]*$"
+          },
           "shopify": {
             "type": "object",
             "required": [
-              "admin-api-version",
-              "authentication"
+              "admin-api-version"
             ],
             "properties": {
               "shop-domain": {
