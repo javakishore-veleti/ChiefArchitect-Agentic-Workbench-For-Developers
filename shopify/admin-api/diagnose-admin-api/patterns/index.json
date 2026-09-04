@@ -1,0 +1,155 @@
+{
+  "version": 1,
+  "routing": [
+    {
+      "id": "access-and-permissions",
+      "title": "Access and permissions",
+      "signals": [
+        "access denied",
+        "forbidden",
+        "unauthorized",
+        "scope",
+        "permission"
+      ],
+      "pattern": "patterns/access-and-permissions.md",
+      "artifacts": [
+        "queries/current-app-scopes.graphql"
+      ]
+    },
+    {
+      "id": "api-version-and-schema",
+      "title": "API version and schema",
+      "signals": [
+        "deprecated",
+        "version",
+        "undefined field",
+        "null after upgrade",
+        "schema"
+      ],
+      "pattern": "patterns/api-version-and-schema.md",
+      "artifacts": [
+        "scripts/compare-graphql.mjs"
+      ]
+    },
+    {
+      "id": "search-and-filtering",
+      "title": "Search and filtering",
+      "signals": [
+        "search",
+        "filter",
+        "query syntax",
+        "wrong results",
+        "sku"
+      ],
+      "pattern": "patterns/search-and-filtering.md",
+      "artifacts": [
+        "queries/product-variants-by-sku.graphql"
+      ]
+    },
+    {
+      "id": "pagination-and-counts",
+      "title": "Pagination and counts",
+      "signals": [
+        "cursor",
+        "pagination",
+        "missing records",
+        "duplicate records",
+        "count"
+      ],
+      "pattern": "patterns/pagination-and-counts.md",
+      "artifacts": [
+        "scripts/run-admin-graphql.mjs"
+      ]
+    },
+    {
+      "id": "query-cost-and-throttling",
+      "title": "Query cost and throttling",
+      "signals": [
+        "throttled",
+        "429",
+        "query cost",
+        "restore rate",
+        "bucket"
+      ],
+      "pattern": "patterns/query-cost-and-throttling.md",
+      "artifacts": [
+        "scripts/run-admin-graphql.mjs"
+      ]
+    },
+    {
+      "id": "timeouts-and-bulk-operations",
+      "title": "Timeouts and bulk operations",
+      "signals": [
+        "timeout",
+        "large query",
+        "bulk operation",
+        "jsonl",
+        "long running"
+      ],
+      "pattern": "patterns/timeouts-and-bulk-operations.md",
+      "artifacts": [
+        "queries/start-bulk-products.graphql"
+      ]
+    },
+    {
+      "id": "mutation-user-errors",
+      "title": "Mutation user errors",
+      "signals": [
+        "usererrors",
+        "invalid input",
+        "mutation failed",
+        "partial update",
+        "atomic"
+      ],
+      "pattern": "patterns/mutation-user-errors.md",
+      "artifacts": [
+        "scripts/summarize-graphql.mjs"
+      ]
+    },
+    {
+      "id": "metafield-validation",
+      "title": "Metafield validation",
+      "signals": [
+        "metafield",
+        "definition validation",
+        "namespace",
+        "invalid value",
+        "reference"
+      ],
+      "pattern": "patterns/metafield-validation.md",
+      "artifacts": [
+        "scripts/summarize-graphql.mjs"
+      ]
+    },
+    {
+      "id": "null-and-missing-fields",
+      "title": "Null and missing fields",
+      "signals": [
+        "null",
+        "missing field",
+        "empty result",
+        "channel information",
+        "unexpected null"
+      ],
+      "pattern": "patterns/null-and-missing-fields.md",
+      "artifacts": [
+        "scripts/compare-graphql.mjs"
+      ]
+    },
+    {
+      "id": "consistency-and-platform-defects",
+      "title": "Consistency and suspected defects",
+      "signals": [
+        "worked before",
+        "regression",
+        "eventual consistency",
+        "platform bug",
+        "inconsistent shops"
+      ],
+      "pattern": "patterns/consistency-and-platform-defects.md",
+      "artifacts": [
+        "scripts/compare-graphql.mjs"
+      ]
+    }
+  ]
+}

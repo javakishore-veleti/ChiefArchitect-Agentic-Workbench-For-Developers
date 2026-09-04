@@ -1,0 +1,1 @@
+query ProductVariantsBySku($query: String!, $first: Int! = 25) { productVariants(first: $first, query: $query) { nodes { id sku title product { id handle title } } pageInfo { hasNextPage endCursor } } }

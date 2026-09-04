@@ -1,0 +1,238 @@
+{
+  "source": "https://community.shopify.dev/c/graphql-troubleshooting/8",
+  "notice": "Titles and summaries are paraphrased research metadata. Community reports are not authoritative product behavior.",
+  "issues": [
+    {
+      "id": "order-channel-display-name-null",
+      "title": "Order channel display name became null",
+      "pattern": "api-version-and-schema",
+      "url": "https://community.shopify.dev/t/order-channelinformation-displayname-started-returning-null-on-api-version-2026-01/37435",
+      "status": "community-signal-needs-official-validation",
+      "captured": "2026-09-04"
+    },
+    {
+      "id": "collection-shared-source-add-failure",
+      "title": "Legacy collection add fails with shared source",
+      "pattern": "mutation-user-errors",
+      "url": "https://community.shopify.dev/t/bug-legacy-collectionaddproductsv2-will-not-work-if-the-collection-has-at-least-one-shareable-source-from-another-app/37406",
+      "status": "community-signal-needs-official-validation",
+      "captured": "2026-09-04"
+    },
+    {
+      "id": "collection-shared-source-target",
+      "title": "Legacy collection add targets shared source",
+      "pattern": "mutation-user-errors",
+      "url": "https://community.shopify.dev/t/bug-legacy-collectionaddproductsv2-will-add-to-the-shared-source-instead-of-adding-to-the-collection/37409",
+      "status": "community-signal-needs-official-validation",
+      "captured": "2026-09-04"
+    },
+    {
+      "id": "order-market-label-discrepancy",
+      "title": "Order and market country labels differ",
+      "pattern": "consistency-and-platform-defects",
+      "url": "https://community.shopify.dev/t/order-market-matching-discrepancy-between-orders-country-label-and-markets-country-label/34630",
+      "status": "community-signal-needs-official-validation",
+      "captured": "2026-09-04"
+    },
+    {
+      "id": "graphiql-permission-error",
+      "title": "GraphiQL field access denied despite requested scopes",
+      "pattern": "access-and-permissions",
+      "url": "https://community.shopify.dev/t/graphiql-app-permission-error/13549",
+      "status": "community-signal-needs-official-validation",
+      "captured": "2026-09-04"
+    },
+    {
+      "id": "new-customer-account-playwright",
+      "title": "Automating logged-in checkout with new customer accounts",
+      "pattern": "access-and-permissions",
+      "url": "https://community.shopify.dev/t/recommended-playwright-approach-for-automating-logged-in-shopify-checkout-with-new-customer-accounts/37397",
+      "status": "community-signal-needs-official-validation",
+      "captured": "2026-09-04"
+    },
+    {
+      "id": "plus-trial-detection",
+      "title": "Plus trial capability detection differs",
+      "pattern": "consistency-and-platform-defects",
+      "url": "https://community.shopify.dev/t/bug-plus-trial-not-considered-plus/37413",
+      "status": "community-signal-needs-official-validation",
+      "captured": "2026-09-04"
+    },
+    {
+      "id": "collection-update-invalid-product",
+      "title": "Collection update fails when one product is absent",
+      "pattern": "mutation-user-errors",
+      "url": "https://community.shopify.dev/t/bug-graphql-mutation-collectionupdate-will-not-add-products-if-at-least-one-product-does-not-exist/37104",
+      "status": "community-signal-needs-official-validation",
+      "captured": "2026-09-04"
+    },
+    {
+      "id": "variant-sku-search",
+      "title": "Variant SKU search returns unexpected matches",
+      "pattern": "search-and-filtering",
+      "url": "https://community.shopify.dev/t/productvariants-sku-search-returning-incorrect-results/37389",
+      "status": "community-signal-needs-official-validation",
+      "captured": "2026-09-04"
+    },
+    {
+      "id": "sale-agreement-fees",
+      "title": "Restocking and return fees representation",
+      "pattern": "null-and-missing-fields",
+      "url": "https://community.shopify.dev/t/saleagreements-how-does-a-restocking-fee-or-return-shipping-fee-present/37133",
+      "status": "community-signal-needs-official-validation",
+      "captured": "2026-09-04"
+    },
+    {
+      "id": "bundle-app-limit",
+      "title": "Bundle ownership limited to one app",
+      "pattern": "access-and-permissions",
+      "url": "https://community.shopify.dev/t/bundles-limited-to-one-app/37287",
+      "status": "community-signal-needs-official-validation",
+      "captured": "2026-09-04"
+    },
+    {
+      "id": "saved-view-format",
+      "title": "Saved-view response changed",
+      "pattern": "api-version-and-schema",
+      "url": "https://community.shopify.dev/t/saved-views-format-changed-from-saved-search/37253",
+      "status": "community-signal-needs-official-validation",
+      "captured": "2026-09-04"
+    },
+    {
+      "id": "order-update-metafield-validation",
+      "title": "Unrelated invalid metafield blocks order update",
+      "pattern": "metafield-validation",
+      "url": "https://community.shopify.dev/t/bug-orderupdate-rejects-valid-metafield-writes-when-the-order-carries-an-unrelated-metafield-that-fails-its-definitions-validation/37321",
+      "status": "community-signal-needs-official-validation",
+      "captured": "2026-09-04"
+    },
+    {
+      "id": "shopifyql-group-cardinality",
+      "title": "Grouping cardinality prevents query execution",
+      "pattern": "timeouts-and-bulk-operations",
+      "url": "https://community.shopify.dev/t/group-by-cardinality-can-make-a-shopifyqlquery-date-range-unqueryable-at-any-width/36518",
+      "status": "community-signal-needs-official-validation",
+      "captured": "2026-09-04"
+    },
+    {
+      "id": "collection-source-label",
+      "title": "Collection source needs usable identification",
+      "pattern": "null-and-missing-fields",
+      "url": "https://community.shopify.dev/t/new-collection-source-no-good-user-facing-wording-to-designate-a-source/37279",
+      "status": "community-signal-needs-official-validation",
+      "captured": "2026-09-04"
+    },
+    {
+      "id": "draft-order-payment-gateway",
+      "title": "Draft order completion gateway identifier fails",
+      "pattern": "mutation-user-errors",
+      "url": "https://community.shopify.dev/t/draftordercomplete-paymentgatewayid-issue/37283",
+      "status": "community-signal-needs-official-validation",
+      "captured": "2026-09-04"
+    },
+    {
+      "id": "inventory-analytics-gap",
+      "title": "Inventory adjustments absent from analytics",
+      "pattern": "consistency-and-platform-defects",
+      "url": "https://community.shopify.dev/t/inventory-adjustments-are-not-showing-in-analytics-shopifyql/36733",
+      "status": "community-signal-needs-official-validation",
+      "captured": "2026-09-04"
+    },
+    {
+      "id": "subscription-date-loss",
+      "title": "Skipping cycle discards expected billing-attempt date",
+      "pattern": "consistency-and-platform-defects",
+      "url": "https://community.shopify.dev/t/skipping-a-billing-cycle-discards-a-previously-set-billingattemptexpecteddate-and-the-value-is-unrecoverable/37206",
+      "status": "community-signal-needs-official-validation",
+      "captured": "2026-09-04"
+    },
+    {
+      "id": "billing-cycle-balance",
+      "title": "Balance reports zero on final cycle day",
+      "pattern": "consistency-and-platform-defects",
+      "url": "https://community.shopify.dev/t/balance-used-is-zero-when-requesting-it-on-last-billing-cycle-day/36923",
+      "status": "community-signal-needs-official-validation",
+      "captured": "2026-09-04"
+    },
+    {
+      "id": "cancel-order-fee",
+      "title": "Representing fees while cancelling an order",
+      "pattern": "mutation-user-errors",
+      "url": "https://community.shopify.dev/t/how-to-cancel-an-order-and-charge-a-fee/37134",
+      "status": "community-signal-needs-official-validation",
+      "captured": "2026-09-04"
+    },
+    {
+      "id": "manual-payment-method",
+      "title": "Manual payment with custom method",
+      "pattern": "mutation-user-errors",
+      "url": "https://community.shopify.dev/t/ordercreatemanualpayment-mutation-custom-payment-method/37055",
+      "status": "community-signal-needs-official-validation",
+      "captured": "2026-09-04"
+    },
+    {
+      "id": "fulfillment-history-message",
+      "title": "Fulfillment message missing from order history",
+      "pattern": "null-and-missing-fields",
+      "url": "https://community.shopify.dev/t/bug-fulfillmentcreate-message-no-longer-shows-in-order-history/21188",
+      "status": "community-signal-needs-official-validation",
+      "captured": "2026-09-04"
+    },
+    {
+      "id": "created-source-identity",
+      "title": "Created collection source cannot be identified",
+      "pattern": "null-and-missing-fields",
+      "url": "https://community.shopify.dev/t/bug-no-way-to-identify-the-source-we-just-created-in-sourcestocreate/36887",
+      "status": "community-signal-needs-official-validation",
+      "captured": "2026-09-04"
+    },
+    {
+      "id": "delete-all-sources",
+      "title": "Collection cannot remove every source",
+      "pattern": "mutation-user-errors",
+      "url": "https://community.shopify.dev/t/bug-new-collection-source-cant-delete-all-sources-from-a-collection/36885",
+      "status": "community-signal-needs-official-validation",
+      "captured": "2026-09-04"
+    },
+    {
+      "id": "return-tax-holiday",
+      "title": "Return calculation taxes even exchange",
+      "pattern": "consistency-and-platform-defects",
+      "url": "https://community.shopify.dev/t/returncalculate-charges-sales-tax-on-even-exchanges-of-orders-placed-during-state-sales-tax-holidays-state-law-says-no-tax-is-due/37111",
+      "status": "community-signal-needs-official-validation",
+      "captured": "2026-09-04"
+    },
+    {
+      "id": "undocumented-b2b-filter",
+      "title": "Undocumented order filter considered for production",
+      "pattern": "api-version-and-schema",
+      "url": "https://community.shopify.dev/t/is-the-undocumented-order-query-filter-business-to-business-safe-to-use-in-prod/36873",
+      "status": "community-signal-needs-official-validation",
+      "captured": "2026-09-04"
+    },
+    {
+      "id": "graphql-timeout",
+      "title": "GraphQL timeout on expensive query",
+      "pattern": "timeouts-and-bulk-operations",
+      "url": "https://community.shopify.dev/t/graphql-timeout-was-reached/37057",
+      "status": "community-signal-needs-official-validation",
+      "captured": "2026-09-04"
+    },
+    {
+      "id": "collection-source-conversion",
+      "title": "App-owned source conversion question",
+      "pattern": "mutation-user-errors",
+      "url": "https://community.shopify.dev/t/can-we-turn-an-app-owned-collection-source-into-a-regular-source/36521",
+      "status": "community-signal-needs-official-validation",
+      "captured": "2026-09-04"
+    },
+    {
+      "id": "find-collections-by-source",
+      "title": "Finding collections that reference a source",
+      "pattern": "search-and-filtering",
+      "url": "https://community.shopify.dev/t/find-all-collections-that-use-a-given-app-owned-source/36519",
+      "status": "community-signal-needs-official-validation",
+      "captured": "2026-09-04"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "httpStatus": 200,
+  "requestId": "synthetic-request",
+  "data": {
+    "productUpdate": {
+      "product": null,
+      "userErrors": [
+        {
+          "field": [
+            "product",
+            "title"
+          ],
+          "message": "Title is required",
+          "code": "BLANK"
+        }
+      ]
+    }
+  },
+  "cost": {
+    "requestedQueryCost": 10,
+    "actualQueryCost": 10
+  }
+}

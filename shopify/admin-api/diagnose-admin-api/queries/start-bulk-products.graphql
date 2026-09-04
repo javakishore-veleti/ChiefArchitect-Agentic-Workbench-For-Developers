@@ -1,0 +1,1 @@
+mutation StartBulkProducts { bulkOperationRunQuery(query: """{ products { edges { node { id handle title updatedAt variants { edges { node { id sku title updatedAt } } } } } } }""") { bulkOperation { id status } userErrors { field message } } }

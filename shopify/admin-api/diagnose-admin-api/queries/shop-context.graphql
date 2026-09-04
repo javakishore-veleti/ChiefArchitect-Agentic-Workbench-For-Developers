@@ -1,0 +1,1 @@
+query ShopContext { shop { id name myshopifyDomain primaryDomain { host url } } }
