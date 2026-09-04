@@ -1,0 +1,3 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema","type":"object","required":["terms"],"properties":{"terms":{"type":"array","items":{"type":"object","required":["term","application"],"properties":{"term":{"type":"string","minLength":1},"aliases":{"type":"array","uniqueItems":true,"items":{"type":"string"}},"application":{"type":"string"},"route":{"type":"string"},"component":{"type":"string"},"service":{"type":"string"},"api":{"type":"string"},"repo-paths":{"type":"array","items":{"type":"string"}},"log-fields":{"type":"array","items":{"type":"string"}}},"additionalProperties":false}}},"additionalProperties":false
+}

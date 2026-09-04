@@ -1,0 +1,6 @@
+{
+  "terms":[
+    {"term":"results page","aliases":["view results","test results"],"application":"service-portal","route":"/results","component":"ResultsPageComponent","service":"ResultsService","api":"orders","repo-paths":["src/app/results"],"log-fields":["traceId","resultId"]},
+    {"term":"sign in","aliases":["login","authentication"],"application":"service-portal","route":"/login","component":"LoginComponent","service":"AuthService","repo-paths":["src/app/auth"],"log-fields":["traceId"]}
+  ]
+}

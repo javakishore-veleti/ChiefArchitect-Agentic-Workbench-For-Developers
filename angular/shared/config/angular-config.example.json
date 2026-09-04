@@ -1,0 +1,23 @@
+{
+  "schema-version": 1,
+  "configs-envs-mapping": [{"config-name":"portal-nonproduction","envs":["dev","qa","staging"]}],
+  "configs": [{
+    "config-name":"portal-nonproduction",
+    "applications":[{
+      "name":"service-portal",
+      "workspace":"enterprise-portals",
+      "project":"service-portal",
+      "repo-path":"portals/service-portal",
+      "deployments":[{
+        "name":"primary",
+        "base-url-template":"https://service-${env}.example.invalid",
+        "production":false,
+        "api-mappings":{"orders":"https://orders-${env}.example.invalid"},
+        "auth-profile":{"type":"oidc","issuer-template":"https://identity-${env}.example.invalid","client-id-ref":{"provider":"environment","name":"ANGULAR_SERVICE_PORTAL_CLIENT_ID"}},
+        "feature-flags":{"new-results-view":false},
+        "log-fields":{"correlation-id":"traceId","application":"service-portal"}
+      }]
+    }],
+    "vocabulary":"angular/shared/vocabulary/angular-vocabulary.example.json"
+  }]
+}

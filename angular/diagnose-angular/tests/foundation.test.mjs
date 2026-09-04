@@ -1,0 +1,22 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import {classifyIssue} from '../scripts/classify-issue.mjs';
+import {validatePlan} from '../scripts/validate-plan.mjs';
+import {summarizeDiagnostics} from '../scripts/summarize-diagnostics.mjs';
+import {compareContexts} from '../scripts/compare-contexts.mjs';
+import {resolveConfig} from '../../shared/config/resolve-config.mjs';
+import {mergeConfig,readConfigUri} from '../../shared/config/load-config.mjs';
+import {resolveTerm} from '../../shared/vocabulary/resolve-term.mjs';
+
+test('routes SSR symptoms without loading evidence',()=>assert.equal(classifyIssue('window is not defined during hydration').selected,'ssr-hydration'));
+test('blocks deployment, disclosure, destructive git, and browser writes',()=>assert.equal(validatePlan({actions:['ng deploy','show client secret','git reset --hard HEAD','POST https://api.example/items']}).errors.length,4));
+test('permits bounded read diagnostics',()=>assert.equal(validatePlan({actions:['ng test --watch=false','read src/app/app.routes.ts']}).ok,true));
+test('redacts nested sensitive fields',()=>assert.equal(summarizeDiagnostics({context:{authorization:'Bearer x',environment:'qa'}}).context.authorization,'[REDACTED]'));
+test('context comparator excludes credentials',()=>assert.deepEqual(compareContexts({port:1,token:'a'},{port:2,token:'b'}),[{field:'port',left:1,right:2}]));
+test('resolves arbitrary environment, application, and deployment',()=>{const doc=JSON.parse(fs.readFileSync(new URL('../../shared/config/angular-config.example.json',import.meta.url)));const x=resolveConfig(doc,{environment:'qa',applicationName:'service-portal',deploymentName:'primary'});assert.equal(x.deployment['base-url'],'https://service-qa.example.invalid');});
+test('requires application selection when ambiguous',()=>{const doc=JSON.parse(fs.readFileSync(new URL('../../shared/config/angular-config.example.json',import.meta.url)));doc.configs[0].applications.push({...doc.configs[0].applications[0],name:'another'});assert.throws(()=>resolveConfig(doc,{environment:'qa'}),/Specify one application/);});
+test('resolves exact business alias',()=>{const doc=JSON.parse(fs.readFileSync(new URL('../../shared/vocabulary/angular-vocabulary.example.json',import.meta.url)));assert.equal(resolveTerm(doc,'view results',{application:'service-portal'}).component,'ResultsPageComponent');});
+test('fails rather than guessing unknown terms',()=>assert.throws(()=>resolveTerm({terms:[]},'mystery'),/Unknown/));
+test('override replaces a complete config entry',()=>{const base={'configs-envs-mapping':[{'config-name':'a',envs:['dev']}],configs:[{'config-name':'a',applications:[{name:'old'}]}]};const over={'configs-envs-mapping':[{'config-name':'a',envs:['qa']}],configs:[{'config-name':'a',applications:[{name:'new'}]}]};assert.equal(mergeConfig(base,over).configs[0].applications[0].name,'new');});
+test('S3 override delegates to AWS CLI identity',async()=>{const calls=[];const x=await readConfigUri('s3://bucket/angular.json',{run:async(cmd,args)=>{calls.push([cmd,args]);return {stdout:'{"configs":[]}'};}});assert.deepEqual(x,{configs:[]});assert.equal(calls[0][0],'aws');});

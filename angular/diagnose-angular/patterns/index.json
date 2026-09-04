@@ -1,0 +1,10 @@
+{
+  "components-signals": ["signal", "computed", "effect", "change detection", "expressionchanged", "component", "viewchild", "input", "output"],
+  "forms-templates": ["formcontrol", "formgroup", "ngmodel", "validator", "template", "controlvalueaccessor", "reactive form"],
+  "ssr-hydration": ["ssr", "hydration", "server rendering", "prerender", "window is not defined", "document is not defined", "transferstate"],
+  "routing-navigation": ["router", "route", "navigation", "guard", "resolver", "lazy load", "redirect", "outlet"],
+  "state-rxjs": ["rxjs", "observable", "subject", "subscription", "ngrx", "state", "memory leak", "switchmap"],
+  "http-auth": ["http", "api", "cors", "401", "403", "token", "interceptor", "oauth", "oidc", "auth"],
+  "testing": ["testbed", "fixture", "karma", "jasmine", "jest", "vitest", "playwright", "cypress", "fakeasync"],
+  "build-tooling": ["build", "angular.json", "vite", "webpack", "esbuild", "npm", "dependency", "bundle", "typescript", "cli"]
+}
