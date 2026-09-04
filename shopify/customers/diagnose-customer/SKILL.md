@@ -7,6 +7,8 @@ description: Diagnose Shopify customer identity, profile, access, and cross-stor
 
 Resolve `config-name` plus environment through `shopify/shared` before investigating. Never infer a shop, Hydrogen app, API version, credential, or customer identifier from another environment.
 
+When the request uses a configured business term for a metafield, resolve it with `shopify/shared/metafields/resolve-metafield-term.mjs` and require owner type `CUSTOMER`, `COMPANY`, or `COMPANY_LOCATION`. Build the read-only object query with `build-metafield-query.mjs`; never guess namespace or key.
+
 1. Run `scripts/classify-customer-issue.mjs --text '<symptom>'`.
 2. Read only the returned pattern file. If confidence is low, read `patterns/api-boundaries.md` first.
 3. Build a read-only probe with `scripts/build-customer-query.mjs --surface <surface> --mode <mode>`. Do not send mutations, passwords, tokens, authorization codes, cookies, or raw PII to logs or reports.

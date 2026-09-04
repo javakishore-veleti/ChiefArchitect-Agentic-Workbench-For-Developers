@@ -5,6 +5,8 @@ description: Diagnose Shopify product, variant, option, inventory, media, metafi
 
 # Shopify product diagnosis
 
+For a configured metafield word or phrase, use `shopify/shared/metafields/resolve-metafield-term.mjs` with owner type `PRODUCT`, `PRODUCT_VARIANT`, or `COLLECTION`, then use `build-metafield-query.mjs`. Require an identified object and never guess a namespace, key, or unsupported value-search filter.
+
 1. Resolve `config-name` plus environment with `shopify/shared/config/load-config.mjs`; never infer a shop, storefront, market, publication or Hydrogen app.
 2. Run `scripts/classify-product-issue.mjs` and read only the first matched file in `patterns/`. Load a second only when its score ties.
 3. Start with `queries/product-diagnostic.graphql` using one stable identifier and `scripts/run-product-query.mjs`, which delegates credential resolution to the shared Admin runner. Compare environments with `scripts/compare-products.mjs`; GIDs are shop-local, so compare handles, SKUs and option values.

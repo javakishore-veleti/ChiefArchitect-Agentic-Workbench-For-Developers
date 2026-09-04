@@ -5,6 +5,8 @@ description: Diagnose Shopify order retrieval, lifecycle, payment, fulfillment, 
 
 # Diagnose a Shopify order
 
+For a configured metafield term, use `shopify/shared/metafields/resolve-metafield-term.mjs` with owner type `ORDER` or `DRAFT_ORDER`, then build the read-only object query with `build-metafield-query.mjs`. Require an identified object and never infer a namespace or key.
+
 1. Resolve `config-name` plus environment with `shopify/shared/config/load-config.mjs`; never infer a shop or reuse another environment's credentials.
 2. Run `scripts/classify-order-issue.mjs` and read only its highest-scoring `patterns/` file. Load `knowledge/community-cases.json` only when comparable cases are needed.
 3. Start with `queries/order-diagnostic.graphql`. Minimize protected customer data and redact it from evidence.

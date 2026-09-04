@@ -1,0 +1,41 @@
+{
+  "schema-version": 1,
+  "terms": [
+    {
+      "term": "external customer id",
+      "aliases": ["customer source id", "customer integration id"],
+      "owner-type": "CUSTOMER",
+      "namespace": "integration",
+      "key": "external_customer_id",
+      "type": "single_line_text_field",
+      "description": "Example only; replace with the organization's definition."
+    },
+    {
+      "term": "external product id",
+      "aliases": ["product source id", "product integration id"],
+      "owner-type": "PRODUCT",
+      "namespace": "integration",
+      "key": "external_product_id",
+      "type": "single_line_text_field",
+      "description": "Example only; replace with the organization's definition."
+    },
+    {
+      "term": "source order id",
+      "aliases": ["external order id", "order integration id"],
+      "owner-type": "ORDER",
+      "namespace": "integration",
+      "key": "source_order_id",
+      "type": "single_line_text_field",
+      "description": "Example only; replace with the organization's definition."
+    },
+    {
+      "term": "campaign reference",
+      "aliases": ["campaign id", "promotion reference"],
+      "owner-type": "DISCOUNT_CODE",
+      "namespace": "integration",
+      "key": "campaign_reference",
+      "type": "single_line_text_field",
+      "description": "Example only; replace with the organization's definition."
+    }
+  ]
+}

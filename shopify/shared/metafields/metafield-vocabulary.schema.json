@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Shopify metafield vocabulary",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema-version", "terms"],
+  "properties": {
+    "schema-version": { "const": 1 },
+    "terms": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["term", "owner-type", "namespace", "key"],
+        "properties": {
+          "term": { "type": "string", "minLength": 1 },
+          "aliases": { "type": "array", "items": { "type": "string", "minLength": 1 }, "uniqueItems": true },
+          "owner-type": {
+            "enum": ["CUSTOMER", "COMPANY", "COMPANY_LOCATION", "PRODUCT", "PRODUCT_VARIANT", "COLLECTION", "ORDER", "DRAFT_ORDER", "DISCOUNT_CODE", "DISCOUNT_AUTOMATIC"]
+          },
+          "namespace": { "type": "string", "minLength": 1 },
+          "key": { "type": "string", "minLength": 1 },
+          "type": { "type": "string" },
+          "description": { "type": "string" }
+        }
+      }
+    }
+  }
+}

@@ -5,6 +5,8 @@ description: Diagnose Shopify discount configuration, eligibility, Functions, co
 
 # Diagnose Shopify discounts
 
+For a configured metafield term, use `shopify/shared/metafields/resolve-metafield-term.mjs` with owner type `DISCOUNT_CODE` or `DISCOUNT_AUTOMATIC`, then build the read-only object query with `build-metafield-query.mjs`. Never infer a namespace, key, or discount owner.
+
 Resolve `config-name` and environment with `shopify/shared/config/load-config.mjs` and `resolve-config.mjs`. Never infer a shop, environment, Hydrogen app, market, company, or buyer.
 
 1. Run `scripts/classify-discount-issue.mjs` with the symptom. Read only the returned `patterns/*.md` files.
