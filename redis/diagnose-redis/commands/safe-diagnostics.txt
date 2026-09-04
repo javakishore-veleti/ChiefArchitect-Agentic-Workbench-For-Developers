@@ -1,0 +1,20 @@
+PING
+INFO <section>
+TYPE <exact-key>
+EXISTS <exact-key>
+TTL <exact-key>
+PTTL <exact-key>
+MEMORY USAGE <exact-key>
+OBJECT ENCODING <exact-key>
+GET <exact-key>
+HGETALL <exact-key>
+HLEN <exact-key>
+LLEN <exact-key>
+SCARD <exact-key>
+ZCARD <exact-key>
+XLEN <exact-key>
+XINFO GROUPS <exact-key>
+SLOWLOG GET <bounded-count>
+LATENCY LATEST
+CLUSTER INFO
+ROLE

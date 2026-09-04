@@ -1,0 +1,24 @@
+{
+  "schema-version": 1,
+  "configs-envs-mapping": [
+    {"config-name":"catalog-nonproduction","envs":["dev","qa","staging"]}
+  ],
+  "configs": [
+    {
+      "config-name":"catalog-nonproduction",
+      "deployments":[
+        {
+          "name":"catalog-primary",
+          "provider":"azure",
+          "endpoint":"redis.example.internal",
+          "port":6380,
+          "tls":true,
+          "database":0,
+          "production":false,
+          "secret-ref":{"provider":"environment","name":"REDIS_CATALOG_PASSWORD"}
+        }
+      ],
+      "key-vocabulary":"../key-vocabulary/key-vocabulary.example.json"
+    }
+  ]
+}

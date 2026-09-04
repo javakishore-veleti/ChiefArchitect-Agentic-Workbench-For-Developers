@@ -1,0 +1,11 @@
+{
+  "connectivity-auth-tls": ["connect", "connection refused", "noauth", "wrongpass", "acl", "certificate", "tls", "ssl"],
+  "client-pooling-timeouts": ["pool", "timeout", "reconnect", "connection reset", "lettuce", "jedis", "redis-py", "node-redis"],
+  "keys-types-ttl": ["wrongtype", "missing key", "prefix", "serialize", "ttl", "expire", "stale"],
+  "memory-eviction": ["oom", "memory", "evict", "fragmentation", "maxmemory"],
+  "latency-blocking": ["latency", "slow", "blocked", "hot key", "big key", "cpu"],
+  "cluster-replication-persistence": ["moved", "ask", "crossslot", "cluster", "replica", "sentinel", "failover", "aof", "rdb", "bgsave"],
+  "streams-pubsub": ["xreadgroup", "pending", "consumer group", "stream", "pubsub", "subscriber", "message loss"],
+  "search-json-vector": ["ft.search", "index", "redisjson", "json", "vector", "hnsw", "dialect"],
+  "managed-services": ["azure managed redis", "azure cache", "elasticache", "redis cloud", "private endpoint", "maintenance"]
+}

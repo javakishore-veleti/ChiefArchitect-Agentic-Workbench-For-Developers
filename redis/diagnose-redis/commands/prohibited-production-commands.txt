@@ -1,0 +1,16 @@
+FLUSHALL
+FLUSHDB
+DEBUG
+SHUTDOWN
+CONFIG SET
+MODULE LOAD
+MIGRATE
+RESTORE
+REPLICAOF
+SLAVEOF
+FAILOVER
+CLUSTER RESET
+KEYS
+MONITOR
+SCAN without a bounded MATCH and COUNT
+Any write, delete, expiry change, or administrative command without explicit authorization

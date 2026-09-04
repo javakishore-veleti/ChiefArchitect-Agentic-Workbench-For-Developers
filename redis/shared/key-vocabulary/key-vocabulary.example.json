@@ -1,0 +1,7 @@
+{
+  "schema-version":1,
+  "terms":[
+    {"term":"product cache","aliases":["catalog cache","product details"],"key-template":"catalog:{environment}:product:{product-id}","data-type":"hash","allowed-operations":["TYPE","EXISTS","TTL","HLEN"]},
+    {"term":"customer session","aliases":["login session"],"key-template":"session:{environment}:{customer-id}","data-type":"string","allowed-operations":["TYPE","EXISTS","TTL"]}
+  ]
+}
