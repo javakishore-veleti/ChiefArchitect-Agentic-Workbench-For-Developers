@@ -1,0 +1,18 @@
+{
+  "routes": [
+    {"id":"aks-deployments","keywords":["rollout","deployment","replicaset","manifest","image version"],"skill":"aks-deployments.md"},
+    {"id":"aks-services","keywords":["service","endpoint","selector","clusterip","loadbalancer"],"skill":"aks-services.md"},
+    {"id":"aks-ingress","keywords":["ingress","route","dns","tls","certificate","gateway"],"skill":"aks-ingress.md"},
+    {"id":"aks-configuration","keywords":["configmap","configuration","setting","missing config"],"skill":"aks-configuration.md"},
+    {"id":"aks-secrets","keywords":["secret mount","csi","certificate expiry","key vault mount"],"skill":"aks-secrets.md"},
+    {"id":"aks-scaling","keywords":["hpa","autoscale","scaling","capacity","pending pod"],"skill":"aks-scaling.md"},
+    {"id":"aks-diagnostics","keywords":["crashloop","node failure","pod failure","cluster health","oomkilled"],"skill":"aks-diagnostics.md"},
+    {"id":"acr","keywords":["acr","registry","image pull","imagepullbackoff","repository","container image"],"skill":"acr.md"},
+    {"id":"keyvault","keywords":["key vault","keyvault","vault access","secret reference","private endpoint"],"skill":"keyvault.md"},
+    {"id":"redis","keywords":["azure cache","redis","cache miss","memory pressure","cache latency"],"skill":"cache-redis.md"},
+    {"id":"cosmosdb","keywords":["cosmos","request units","ru/s","429","partition key"],"skill":"cosmosdb.md"},
+    {"id":"entra","keywords":["entra","aad","oauth","openid","authentication","authorization","role assignment"],"skill":"entra.md"},
+    {"id":"application-insights","keywords":["application insights","app insights","kql","telemetry","distributed trace","dependency latency"],"skill":"monitoring.md"},
+    {"id":"cross-service","keywords":["end to end","cross service","correlate","multiple services","transaction"],"skill":"cross-service.md"}
+  ]
+}

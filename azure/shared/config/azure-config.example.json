@@ -1,0 +1,35 @@
+{
+  "$schema": "./azure-config.schema.json",
+  "configs-envs-mapping": [
+    {"config-name":"platform-nonprod","envs":["dev","qa","staging"]},
+    {"config-name":"platform-prod","envs":["prod"]}
+  ],
+  "configs": [
+    {
+      "config-name":"platform-nonprod",
+      "tenants":[{
+        "alias":"enterprise-tenant",
+        "tenant-id":"00000000-0000-0000-0000-000000000000",
+        "subscriptions":[{
+          "alias":"portfolio-nonprod",
+          "subscription-id":"11111111-1111-1111-1111-111111111111",
+          "portfolios":[{
+            "name":"portfolio-a",
+            "programs":[{
+              "name":"program-a",
+              "applications":[{
+                "name":"service-a",
+                "aliases":["api-a"],
+                "resource-refs":[
+                  {"name":"runtime","type":"Microsoft.ContainerService/managedClusters","id":"/subscriptions/11111111-1111-1111-1111-111111111111/resourceGroups/rg-${env}/providers/Microsoft.ContainerService/managedClusters/aks-${env}"},
+                  {"name":"telemetry","type":"Microsoft.Insights/components","id":"/subscriptions/11111111-1111-1111-1111-111111111111/resourceGroups/rg-${env}/providers/Microsoft.Insights/components/appi-${env}"}
+                ]
+              }]
+            }]
+          }]
+        }]
+      }]
+    },
+    {"config-name":"platform-prod","tenants":[]}
+  ]
+}

@@ -1,6 +1,18 @@
 # Azure Skills Catalog
 
-This directory contains reusable Azure engineering skills. Skills discover authorized enterprise setup dynamically; they do not store AKIV Diagnostics subscription, portfolio, program, environment or microservice inventories.
+This directory contains reusable Azure engineering skills. Skills discover authorized enterprise setup dynamically; they do not store organization-specific subscription, portfolio, program, environment or application inventories.
+
+## Recommended entrypoint
+
+Use [`diagnose-azure`](diagnose-azure/SKILL.md) for normal investigations. It resolves the configured enterprise scope, classifies the symptom, and loads only one enhanced service pattern—or the cross-service pattern when required. The 104 leaf skills remain available as optional narrowly scoped procedures.
+
+Enterprise topology is supplied through [`shared/config`](shared/config/). It supports arbitrary tenants, subscriptions, portfolios, programs, environments, applications and Azure resource references. Keep organization-specific configuration outside this repository and select it with `AZURE_DIAGNOSTICS_CONFIG`; optionally supply a local, HTTPS, S3 or Azure Blob override with `AZURE_DIAGNOSTICS_CONFIG_OVERRIDE_URI`.
+
+| Recommended skill | Routes | Words | Estimated entry tokens |
+|---|---:|---:|---:|
+| [`diagnose-azure`](diagnose-azure/SKILL.md) | 14 | 203 | 274 |
+
+The enhanced routes are backed by 108 distinct, qualified official GitHub issue records. These records are diagnostic precedents, not proof that a current incident is the same platform defect.
 
 ## Token model
 
@@ -26,10 +38,11 @@ Word counts include YAML frontmatter and the Markdown body. Token values are pla
 
 | Measure | Value |
 |---|---:|
-| Azure skills | 104 |
+| Azure leaf skills | 104 |
+| Azure skills including router | 105 |
 | Categories | 13 |
-| All Azure `SKILL.md` words | 11879 |
-| Estimated tokens if every skill were loaded | 16068 |
+| All Azure `SKILL.md` words | 12082 |
+| Estimated tokens if every skill were loaded | 16311 |
 | Shared operating-rules words | 151 |
 | Shared operating-rules estimated tokens | 204 |
 
