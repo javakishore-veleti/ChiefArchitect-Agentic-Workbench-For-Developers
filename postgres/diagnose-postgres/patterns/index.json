@@ -1,0 +1,13 @@
+{
+  "connection-authentication": {"file":"connection-authentication.md","keywords":["connection","timeout","ssl","tls","password","authentication","pg_hba","dns"]},
+  "roles-ownership-privileges": {"file":"roles-ownership-privileges.md","keywords":["role","owner","privilege","permission","grant","revoke","rls"]},
+  "databases-schemas-search-path": {"file":"databases-schemas-search-path.md","keywords":["database","schema","search_path","relation does not exist","ambiguous"]},
+  "tables-columns-types": {"file":"tables-columns-types.md","keywords":["table","column","data type","enum","domain","composite","generated"]},
+  "constraints-partitioning": {"file":"constraints-partitioning.md","keywords":["constraint","foreign key","primary key","unique","check","partition"]},
+  "functions-procedures-triggers": {"file":"functions-procedures-triggers.md","keywords":["function","procedure","trigger","security definer","overload"]},
+  "query-plans-statistics": {"file":"query-plans-statistics.md","keywords":["explain","query plan","statistics","estimate","sequential scan","slow query"]},
+  "indexes-access-methods": {"file":"indexes-access-methods.md","keywords":["index","btree","gin","gist","brin","hash","clustered"]},
+  "locks-deadlocks-transactions": {"file":"locks-deadlocks-transactions.md","keywords":["lock","deadlock","transaction","blocking","idle in transaction","serialization"]},
+  "vacuum-bloat-freezing": {"file":"vacuum-bloat-freezing.md","keywords":["vacuum","autovacuum","bloat","freeze","wraparound","analyze"]},
+  "replication-recovery": {"file":"replication-recovery.md","keywords":["replication","replica","wal","recovery","failover","slot","standby"]}
+}

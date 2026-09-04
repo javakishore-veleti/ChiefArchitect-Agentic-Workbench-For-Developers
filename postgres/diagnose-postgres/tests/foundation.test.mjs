@@ -1,0 +1,26 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import {classifyIssue} from '../scripts/classify-postgres-issue.mjs';
+import {validateSqlPlan} from '../scripts/validate-sql-plan.mjs';
+import {compareContexts} from '../scripts/compare-contexts.mjs';
+import {summarizeDiagnostics} from '../scripts/summarize-diagnostics.mjs';
+import {resolveConfig} from '../../shared/config/resolve-config.mjs';
+import {mergeConfig,readConfigUri,validateConfig} from '../../shared/config/load-config.mjs';
+import {resolveSecret} from '../../shared/secrets/resolve-secret.mjs';
+import {resolveObjectTerm,validateVocabulary} from '../../shared/object-vocabulary/resolve-object-term.mjs';
+
+const base=JSON.parse(fs.readFileSync(new URL('../../shared/config/postgres-config.example.json',import.meta.url)));
+test('resolves exact environment hierarchy and interpolates host',()=>{const x=resolveConfig(base,{environment:'qa',clusterName:'transactional-primary',databaseName:'application',contextName:'runtime'});assert.equal(x.cluster.host,'postgres-qa.example.internal');assert.equal(x.context.role,'application_runtime');});
+test('requires disambiguation when contexts differ',()=>assert.throws(()=>resolveConfig(base,{environment:'qa',clusterName:'transactional-primary',databaseName:'application'}),/connection context/));
+test('classifies query-plan issue',()=>{const index=JSON.parse(fs.readFileSync(new URL('../patterns/index.json',import.meta.url)));assert.equal(classifyIssue('slow query explain estimate',index).selected.pattern,'query-plans-statistics');});
+test('allows one read-only statement outside production',()=>assert.equal(validateSqlPlan({sql:'SELECT * FROM pg_catalog.pg_class;'}).ok,true));
+test('rejects mutation and multiple statements',()=>{assert.equal(validateSqlPlan({sql:'UPDATE x SET y=1'}).ok,false);assert.equal(validateSqlPlan({sql:'SELECT 1; SELECT 2'}).ok,false);});
+test('rejects explain analyze and backend termination',()=>{assert.equal(validateSqlPlan({sql:'EXPLAIN ANALYZE SELECT 1'}).ok,false);assert.equal(validateSqlPlan({sql:'SELECT pg_terminate_backend(1)'}).ok,false);});
+test('production requires timeout and read-only transaction',()=>{assert.equal(validateSqlPlan({sql:'SELECT 1',production:true}).ok,false);assert.equal(validateSqlPlan({sql:'SELECT 1',production:true,statementTimeoutMs:5000,transactionReadOnly:true}).ok,true);});
+test('whole config entries replace rather than deep merge',()=>{const merged=mergeConfig(base,{configs:[{'config-name':'application-nonproduction',clusters:[]}]});assert.deepEqual(merged.configs[0].clusters,[]);});
+test('reads s3 config through injected adapter',async()=>{const x=await readConfigUri('s3://bucket/config.json',{run:async()=>({stdout:'{"schema-version":1}'})});assert.equal(x['schema-version'],1);});
+test('rejects duplicate hierarchy names and missing mapping targets',()=>{assert.throws(()=>validateConfig({...base,configs:[base.configs[0],base.configs[0]]}),/duplicate/);assert.throws(()=>validateConfig({...base,'configs-envs-mapping':[{'config-name':'missing',envs:['qa']}]}),/missing config/);});
+test('resolves environment secret without exposing it',async()=>assert.equal(await resolveSecret({provider:'environment',name:'PG_TEST'},{env:{PG_TEST:'secret'}}),'secret'));
+test('object vocabulary exact alias and duplicate validation',()=>{const vocab={terms:[{term:'customer records',aliases:['customers'],database:'app',schema:'public',object:'customer', 'object-type':'table'}]};assert.equal(resolveObjectTerm(vocab,'CUSTOMERS').object,'customer');assert.equal(validateVocabulary(vocab).ok,true);assert.equal(validateVocabulary({terms:[...vocab.terms,{...vocab.terms[0],term:'other'}]}).ok,false);});
+test('summarizes without returning rows and compares contexts',()=>{assert.equal('rows' in summarizeDiagnostics({rows:[{secret:'x'}]}),false);assert.deepEqual(compareContexts({role:'a'},{role:'b'}),[{path:'role',left:'a',right:'b'}]);});

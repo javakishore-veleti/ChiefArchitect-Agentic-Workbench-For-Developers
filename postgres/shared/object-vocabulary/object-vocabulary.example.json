@@ -1,0 +1,6 @@
+{
+  "terms":[
+    {"term":"customer records","aliases":["customers","patient accounts"],"database":"application","schema":"application","object":"customers","object-type":"table"},
+    {"term":"order lookup","aliases":["find orders"],"database":"application","schema":"application","object":"find_orders","object-type":"function","signature":"uuid"}
+  ]
+}

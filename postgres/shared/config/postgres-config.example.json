@@ -1,0 +1,15 @@
+{
+  "schema-version": 1,
+  "configs-envs-mapping": [{"config-name":"application-nonproduction","envs":["dev","qa","staging"]}],
+  "configs": [{
+    "config-name":"application-nonproduction",
+    "object-vocabulary":"../object-vocabulary/object-vocabulary.example.json",
+    "clusters":[{
+      "name":"transactional-primary","provider":"azure","host-template":"postgres-${env}.example.internal","port":5432,"sslmode":"verify-full","production":false,
+      "databases":[{"name":"application","contexts":[
+        {"name":"runtime","role":"application_runtime","search-path":["application","reference","pg_catalog"],"schemas":["application","reference"],"secret-ref":{"provider":"environment","name":"POSTGRES_APP_PASSWORD"}},
+        {"name":"reporting","role":"application_reader","search-path":["reporting","pg_catalog"],"schemas":["reporting"],"secret-ref":{"provider":"mounted-file","name":"/var/run/secrets/postgres/reporting"}}
+      ]}]
+    }]
+  }]
+}
