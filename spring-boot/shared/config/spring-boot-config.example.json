@@ -1,14 +1,419 @@
 {
   "schema-version": 1,
-  "configs-envs-mapping": [{"config-name":"portfolio-nonproduction","envs":["dev","qa","staging"]}],
-  "configs": [{
-    "config-name":"portfolio-nonproduction",
-    "applications":[{
-      "name":"service-a","profiles-by-env":{"dev":["dev"],"qa":["qa"],"staging":["staging"]},
-      "endpoints":{"base-url-template":"https://service-a.${env}.example.invalid","actuator-path":"/actuator"},
-      "repository":{"url":"https://github.com/example/portfolio","module":"services/service-a"},
-      "log-fields":{"correlation-id":"trace_id","application":"service.name"},
-      "credentials":[{"purpose":"diagnostic-api","secret-ref":{"provider":"environment","name-template":"SPRING_SERVICE_A_${env}_DIAGNOSTIC_TOKEN"}}]
-    }]
-  }]
+  "configs-envs-mapping": [
+    {
+      "config-name": "enterprise-nonproduction",
+      "envs": [
+        "dev",
+        "qa",
+        "staging"
+      ]
+    },
+    {
+      "config-name": "enterprise-production",
+      "envs": [
+        "prod"
+      ]
+    }
+  ],
+  "configs": [
+    {
+      "config-name": "enterprise-nonproduction",
+      "vocabulary": "spring-boot/shared/vocabulary/application-vocabulary.example.json",
+      "portfolios": [
+        {
+          "name": "patients",
+          "programs": [
+            {
+              "name": "scheduling",
+              "applications": [
+                {
+                  "name": "appointment-service",
+                  "aliases": [
+                    "appointments",
+                    "scheduling-api"
+                  ],
+                  "contains-phi": true,
+                  "profiles-by-env": {
+                    "dev": [
+                      "dev"
+                    ],
+                    "qa": [
+                      "qa"
+                    ],
+                    "staging": [
+                      "staging"
+                    ]
+                  },
+                  "endpoints": {
+                    "base-url-template": "https://appointment-service.${env}.example.invalid",
+                    "actuator-path": "/actuator"
+                  },
+                  "repository": {
+                    "url": "https://github.com/example/patients-platform",
+                    "module": "services/appointment-service"
+                  },
+                  "depends-on": [
+                    "location-service"
+                  ],
+                  "log-fields": {
+                    "correlation-id": "trace_id",
+                    "application": "service.name",
+                    "business-key": "appointment_reference"
+                  }
+                },
+                {
+                  "name": "location-service",
+                  "aliases": [
+                    "service-centers",
+                    "patient-service-centers"
+                  ],
+                  "contains-phi": false,
+                  "endpoints": {
+                    "base-url-template": "https://location-service.${env}.example.invalid",
+                    "actuator-path": "/actuator"
+                  },
+                  "log-fields": {
+                    "correlation-id": "trace_id",
+                    "application": "service.name",
+                    "business-key": "location_code"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "results-delivery",
+              "applications": [
+                {
+                  "name": "results-service",
+                  "aliases": [
+                    "results",
+                    "result-release"
+                  ],
+                  "contains-phi": true,
+                  "profiles-by-env": {
+                    "dev": [
+                      "dev"
+                    ],
+                    "qa": [
+                      "qa"
+                    ],
+                    "staging": [
+                      "staging"
+                    ]
+                  },
+                  "endpoints": {
+                    "base-url-template": "https://results-service.${env}.example.invalid",
+                    "actuator-path": "/actuator"
+                  },
+                  "repository": {
+                    "url": "https://github.com/example/patients-platform",
+                    "module": "services/results-service"
+                  },
+                  "depends-on": [
+                    "notification-service"
+                  ],
+                  "log-fields": {
+                    "correlation-id": "trace_id",
+                    "application": "service.name",
+                    "business-key": "accession_id"
+                  },
+                  "credentials": [
+                    {
+                      "purpose": "diagnostic-api",
+                      "secret-ref": {
+                        "provider": "environment",
+                        "name-template": "RESULTS_SERVICE_${env}_DIAGNOSTIC_TOKEN"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "name": "notification-service",
+                  "aliases": [
+                    "result-ready-notifications"
+                  ],
+                  "contains-phi": true,
+                  "endpoints": {
+                    "base-url-template": "https://notification-service.${env}.example.invalid",
+                    "actuator-path": "/actuator"
+                  },
+                  "log-fields": {
+                    "correlation-id": "trace_id",
+                    "application": "service.name",
+                    "business-key": "notification_id"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "billing-and-insurance",
+              "applications": [
+                {
+                  "name": "billing-service",
+                  "aliases": [
+                    "billing",
+                    "payments"
+                  ],
+                  "contains-phi": true,
+                  "endpoints": {
+                    "base-url-template": "https://billing-service.${env}.example.invalid",
+                    "actuator-path": "/actuator"
+                  },
+                  "depends-on": [
+                    "insurance-eligibility-service"
+                  ],
+                  "log-fields": {
+                    "correlation-id": "trace_id",
+                    "application": "service.name",
+                    "business-key": "invoice_id"
+                  }
+                },
+                {
+                  "name": "insurance-eligibility-service",
+                  "aliases": [
+                    "eligibility",
+                    "coverage-check",
+                    "insurance-lookup"
+                  ],
+                  "contains-phi": true,
+                  "endpoints": {
+                    "base-url-template": "https://insurance-eligibility-service.${env}.example.invalid",
+                    "actuator-path": "/actuator"
+                  },
+                  "log-fields": {
+                    "correlation-id": "trace_id",
+                    "application": "service.name",
+                    "business-key": "coverage_request_id"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "laboratory-managers",
+          "programs": [
+            {
+              "name": "lab-operations",
+              "applications": [
+                {
+                  "name": "lab-analytics-service",
+                  "aliases": [
+                    "utilization",
+                    "stewardship",
+                    "lab-analytics"
+                  ],
+                  "contains-phi": false,
+                  "endpoints": {
+                    "base-url-template": "https://lab-analytics-service.${env}.example.invalid",
+                    "actuator-path": "/actuator"
+                  },
+                  "depends-on": [
+                    "test-directory-service"
+                  ],
+                  "log-fields": {
+                    "correlation-id": "trace_id",
+                    "application": "service.name",
+                    "business-key": "report_id"
+                  }
+                },
+                {
+                  "name": "test-directory-service",
+                  "aliases": [
+                    "test-directory",
+                    "assay-catalog"
+                  ],
+                  "contains-phi": false,
+                  "endpoints": {
+                    "base-url-template": "https://test-directory-service.${env}.example.invalid",
+                    "actuator-path": "/actuator"
+                  },
+                  "log-fields": {
+                    "correlation-id": "trace_id",
+                    "application": "service.name",
+                    "business-key": "test_code"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "config-name": "enterprise-production",
+      "vocabulary": "spring-boot/shared/vocabulary/application-vocabulary.example.json",
+      "portfolios": [
+        {
+          "name": "patients",
+          "programs": [
+            {
+              "name": "scheduling",
+              "applications": [
+                {
+                  "name": "appointment-service",
+                  "aliases": [
+                    "appointments",
+                    "scheduling-api"
+                  ],
+                  "contains-phi": true,
+                  "endpoints": {
+                    "base-url-template": "https://appointment-service.example.invalid",
+                    "actuator-path": "/actuator"
+                  },
+                  "log-fields": {
+                    "correlation-id": "trace_id",
+                    "business-key": "appointment_reference"
+                  }
+                },
+                {
+                  "name": "location-service",
+                  "aliases": [
+                    "service-centers",
+                    "patient-service-centers"
+                  ],
+                  "contains-phi": false,
+                  "endpoints": {
+                    "base-url-template": "https://location-service.example.invalid",
+                    "actuator-path": "/actuator"
+                  },
+                  "log-fields": {
+                    "correlation-id": "trace_id",
+                    "business-key": "location_code"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "results-delivery",
+              "applications": [
+                {
+                  "name": "results-service",
+                  "aliases": [
+                    "results",
+                    "result-release"
+                  ],
+                  "contains-phi": true,
+                  "endpoints": {
+                    "base-url-template": "https://results-service.example.invalid",
+                    "actuator-path": "/actuator"
+                  },
+                  "depends-on": [
+                    "notification-service"
+                  ],
+                  "log-fields": {
+                    "correlation-id": "trace_id",
+                    "business-key": "accession_id"
+                  }
+                },
+                {
+                  "name": "notification-service",
+                  "aliases": [
+                    "result-ready-notifications"
+                  ],
+                  "contains-phi": true,
+                  "endpoints": {
+                    "base-url-template": "https://notification-service.example.invalid",
+                    "actuator-path": "/actuator"
+                  },
+                  "log-fields": {
+                    "correlation-id": "trace_id",
+                    "business-key": "notification_id"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "billing-and-insurance",
+              "applications": [
+                {
+                  "name": "billing-service",
+                  "aliases": [
+                    "billing",
+                    "payments"
+                  ],
+                  "contains-phi": true,
+                  "endpoints": {
+                    "base-url-template": "https://billing-service.example.invalid",
+                    "actuator-path": "/actuator"
+                  },
+                  "depends-on": [
+                    "insurance-eligibility-service"
+                  ],
+                  "log-fields": {
+                    "correlation-id": "trace_id",
+                    "business-key": "invoice_id"
+                  }
+                },
+                {
+                  "name": "insurance-eligibility-service",
+                  "aliases": [
+                    "eligibility",
+                    "coverage-check",
+                    "insurance-lookup"
+                  ],
+                  "contains-phi": true,
+                  "endpoints": {
+                    "base-url-template": "https://insurance-eligibility-service.example.invalid",
+                    "actuator-path": "/actuator"
+                  },
+                  "log-fields": {
+                    "correlation-id": "trace_id",
+                    "business-key": "coverage_request_id"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "laboratory-managers",
+          "programs": [
+            {
+              "name": "lab-operations",
+              "applications": [
+                {
+                  "name": "lab-analytics-service",
+                  "aliases": [
+                    "utilization",
+                    "stewardship",
+                    "lab-analytics"
+                  ],
+                  "contains-phi": false,
+                  "endpoints": {
+                    "base-url-template": "https://lab-analytics-service.example.invalid",
+                    "actuator-path": "/actuator"
+                  },
+                  "depends-on": [
+                    "test-directory-service"
+                  ],
+                  "log-fields": {
+                    "correlation-id": "trace_id",
+                    "business-key": "report_id"
+                  }
+                },
+                {
+                  "name": "test-directory-service",
+                  "aliases": [
+                    "test-directory",
+                    "assay-catalog"
+                  ],
+                  "contains-phi": false,
+                  "endpoints": {
+                    "base-url-template": "https://test-directory-service.example.invalid",
+                    "actuator-path": "/actuator"
+                  },
+                  "log-fields": {
+                    "correlation-id": "trace_id",
+                    "business-key": "test_code"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }
