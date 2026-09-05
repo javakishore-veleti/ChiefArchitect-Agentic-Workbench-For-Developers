@@ -3,8 +3,12 @@ import {classify} from '../scripts/classify-spring-issue.mjs'; import {validateP
 const config=JSON.parse(fs.readFileSync(new URL('../../shared/config/spring-boot-config.example.json',import.meta.url)));
 const vocab=JSON.parse(fs.readFileSync(new URL('../../shared/vocabulary/application-vocabulary.example.json',import.meta.url)));
 test('routes security issue',()=>assert.equal(classify('JWT request returns 403').pattern,'security'));
-test('resolves arbitrary environment and service',()=>assert.equal(resolveContext(validateConfig(config),{environment:'qa',service:'service-a'}).application.endpoints['base-url-template'],'https://service-a.qa.example.invalid'));
-test('override replaces complete named config',()=>assert.equal(mergeConfig(config,{configs:[{'config-name':'portfolio-nonproduction',applications:[{name:'replacement'}]}]}).configs[0].applications[0].name,'replacement'));
+test('resolves arbitrary environment and service',()=>assert.equal(resolveContext(validateConfig(config),{environment:'qa',service:'results-service'}).application.endpoints['base-url-template'],'https://results-service.qa.example.invalid'));
+test('resolves through the portfolio and program tiers',()=>{const x=resolveContext(validateConfig(config),{environment:'qa',portfolio:'patients',program:'results-delivery',service:'results-service'});assert.equal(x.portfolio,'patients');assert.equal(x.program,'results-delivery');});
+test('resolves a service by business alias',()=>assert.equal(resolveContext(validateConfig(config),{environment:'prod',service:'eligibility'}).application.name,'insurance-eligibility-service'));
+test('reports protected health information handling on the resolved scope',()=>{assert.equal(resolveContext(validateConfig(config),{environment:'prod',service:'results-service'})['contains-phi'],true);assert.equal(resolveContext(validateConfig(config),{environment:'prod',service:'lab-analytics-service'})['contains-phi'],false);});
+test('refuses an ambiguous portfolio and names the candidates',()=>assert.throws(()=>resolveContext(validateConfig(config),{environment:'qa',portfolio:'patients'}),/narrow with portfolio, program or service/));
+test('override replaces complete named config',()=>assert.equal(mergeConfig(config,{configs:[{'config-name':'enterprise-nonproduction',applications:[{name:'replacement'}]}]}).configs[0].applications[0].name,'replacement'));
 test('rejects embedded secrets',()=>assert.throws(()=>validateConfig({'schema-version':1,'configs-envs-mapping':[],configs:[{'config-name':'x',applications:[{name:'x',password:'plain'}]}]}),/secret references/));
 test('resolves exact business alias',()=>assert.equal(resolveTerm(vocab,'coverage check').service,'service-a'));
 test('unknown vocabulary fails',()=>assert.throws(()=>resolveTerm(vocab,'invented'),/Unknown/));

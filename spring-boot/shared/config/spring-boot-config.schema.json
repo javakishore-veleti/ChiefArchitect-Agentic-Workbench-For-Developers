@@ -1,1 +1,82 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","type":"object","required":["schema-version","configs-envs-mapping","configs"],"properties":{"schema-version":{"const":1},"configs-envs-mapping":{"type":"array"},"configs":{"type":"array"}},"additionalProperties":false}
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["schema-version", "configs-envs-mapping", "configs"],
+  "additionalProperties": false,
+  "properties": {
+    "schema-version": {"const": 1},
+    "configs-envs-mapping": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["config-name", "envs"],
+        "additionalProperties": false,
+        "properties": {
+          "config-name": {"type": "string"},
+          "envs": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    },
+    "configs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["config-name"],
+        "additionalProperties": false,
+        "properties": {
+          "config-name": {"type": "string"},
+          "vocabulary": {"type": "string"},
+          "applications": {"$ref": "#/$defs/applications"},
+          "portfolios": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["name"],
+              "additionalProperties": false,
+              "properties": {
+                "name": {"type": "string"},
+                "applications": {"$ref": "#/$defs/applications"},
+                "programs": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": ["name"],
+                    "additionalProperties": false,
+                    "properties": {
+                      "name": {"type": "string"},
+                      "applications": {"$ref": "#/$defs/applications"}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "applications": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name"],
+        "additionalProperties": false,
+        "properties": {
+          "name": {"type": "string"},
+          "aliases": {"type": "array", "items": {"type": "string"}},
+          "contains-phi": {
+            "type": "boolean",
+            "description": "Records whether this service handles protected health information, so evidence collection stays minimum-necessary and redaction is mandatory."
+          },
+          "profiles-by-env": {"type": "object"},
+          "endpoints": {"type": "object"},
+          "repository": {"type": "object"},
+          "depends-on": {"type": "array", "items": {"type": "string"}},
+          "log-fields": {"type": "object"},
+          "credentials": {"type": "array"}
+        }
+      }
+    }
+  }
+}
