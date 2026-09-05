@@ -88,4 +88,6 @@ Development follows this progression:
 
 Publication uses GitHub Actions OIDC trusted publishing and npm provenance. The workflow does not consume a long-lived `NPM_TOKEN`. It skips a version already present in npm, allowing a safely retried run to continue without overwriting an immutable release.
 
+Prerelease versions derive their npm dist-tag from the first prerelease identifier: `0.0.1-beta.1` publishes under `beta`; stable versions publish under `latest`.
+
 The npm trusted publisher must be configured for this repository and `.github/workflows/npm-publish.yml` before the first release.

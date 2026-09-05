@@ -1,6 +1,6 @@
 {
   "name": "@javakishore-veleti/awfd-azure",
-  "version": "0.0.1",
+  "version": "0.0.1-beta.1",
   "description": "AWFD Azure agent skill pack.",
   "license": "Apache-2.0",
   "type": "module",
@@ -14,7 +14,7 @@
     "prepack": "node ../../../scripts/build-packs.mjs azure"
   },
   "dependencies": {
-    "@javakishore-veleti/awfd": "0.0.1"
+    "@javakishore-veleti/awfd": "0.0.1-beta.1"
   },
   "publishConfig": {
     "access": "public",
