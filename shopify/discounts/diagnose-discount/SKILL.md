@@ -1,5 +1,5 @@
 ---
-name: shopify-diagnose-discount
+name: diagnose-discount
 description: Diagnose Shopify discount configuration, eligibility, Functions, combinations, markets, B2B, and cart or checkout outcomes without changing discounts.
 ---
 

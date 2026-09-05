@@ -1,5 +1,5 @@
 ---
-name: azure-keyvault-audit-keyvault-access
+name: audit-keyvault-access
 description: "Audit Keyvault Access using authorized Azure configuration and telemetry."
 ---
 

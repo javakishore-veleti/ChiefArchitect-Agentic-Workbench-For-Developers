@@ -1,5 +1,5 @@
 ---
-name: azure-cosmosdb-validate-indexing-policy
+name: validate-indexing-policy
 description: "Validate Indexing Policy using authorized Azure configuration and telemetry."
 ---
 

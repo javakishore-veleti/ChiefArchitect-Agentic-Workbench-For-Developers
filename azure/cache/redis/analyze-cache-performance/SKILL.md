@@ -1,5 +1,5 @@
 ---
-name: azure-cache-redis-analyze-cache-performance
+name: analyze-cache-performance
 description: "Analyze Cache Performance using authorized Azure configuration and telemetry."
 ---
 

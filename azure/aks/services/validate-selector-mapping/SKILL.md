@@ -1,5 +1,5 @@
 ---
-name: azure-aks-services-validate-selector-mapping
+name: validate-selector-mapping
 description: "Validate Selector Mapping using authorized Azure configuration and telemetry."
 ---
 

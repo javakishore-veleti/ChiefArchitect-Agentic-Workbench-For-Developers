@@ -1,5 +1,5 @@
 ---
-name: azure-aks-ingress-diagnose-routing-failure
+name: diagnose-routing-failure
 description: "Diagnose Routing Failure using authorized Azure configuration and telemetry."
 ---
 

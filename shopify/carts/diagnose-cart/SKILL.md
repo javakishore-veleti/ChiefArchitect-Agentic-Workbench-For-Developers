@@ -1,5 +1,5 @@
 ---
-name: shopify-diagnose-cart
+name: diagnose-cart
 description: Diagnose Shopify Storefront API, Hydrogen, and theme cart failures across configured storefronts and environments without mutating carts by default.
 ---
 

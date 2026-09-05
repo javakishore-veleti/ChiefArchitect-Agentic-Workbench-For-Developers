@@ -1,5 +1,5 @@
 ---
-name: azure-acr-diagnose-image-pull-failure
+name: diagnose-image-pull-failure
 description: "Diagnose Image Pull Failure using authorized Azure configuration and telemetry."
 ---
 

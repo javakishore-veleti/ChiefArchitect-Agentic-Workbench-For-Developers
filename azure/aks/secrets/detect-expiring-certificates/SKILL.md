@@ -1,5 +1,5 @@
 ---
-name: azure-aks-secrets-detect-expiring-certificates
+name: detect-expiring-certificates
 description: "Detect Expiring Certificates using authorized Azure configuration and telemetry."
 ---
 

@@ -1,5 +1,5 @@
 ---
-name: azure-auth-entra-map-identities-to-workloads
+name: map-identities-to-workloads
 description: "Map Identities To Workloads using authorized Azure configuration and telemetry."
 ---
 

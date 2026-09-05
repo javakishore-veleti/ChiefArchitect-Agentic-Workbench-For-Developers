@@ -1,5 +1,5 @@
 ---
-name: shopify-diagnose-order
+name: diagnose-order
 description: Diagnose Shopify order retrieval, lifecycle, payment, fulfillment, return, refund, webhook, Markets and B2B discrepancies.
 ---
 

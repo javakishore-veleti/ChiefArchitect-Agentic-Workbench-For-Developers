@@ -1,5 +1,5 @@
 ---
-name: azure-aks-diagnostics-produce-incident-evidence
+name: produce-incident-evidence
 description: "Produce Incident Evidence using authorized Azure configuration and telemetry."
 ---
 

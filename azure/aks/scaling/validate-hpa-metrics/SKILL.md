@@ -1,5 +1,5 @@
 ---
-name: azure-aks-scaling-validate-hpa-metrics
+name: validate-hpa-metrics
 description: "Validate Hpa Metrics using authorized Azure configuration and telemetry."
 ---
 

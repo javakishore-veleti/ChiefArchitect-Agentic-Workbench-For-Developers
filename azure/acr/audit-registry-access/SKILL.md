@@ -1,5 +1,5 @@
 ---
-name: azure-acr-audit-registry-access
+name: audit-registry-access
 description: "Audit Registry Access using authorized Azure configuration and telemetry."
 ---
 

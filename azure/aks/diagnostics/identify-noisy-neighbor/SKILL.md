@@ -1,5 +1,5 @@
 ---
-name: azure-aks-diagnostics-identify-noisy-neighbor
+name: identify-noisy-neighbor
 description: "Identify Noisy Neighbor using authorized Azure configuration and telemetry."
 ---
 

@@ -1,5 +1,5 @@
 ---
-name: azure-aks-diagnostics-diagnose-node-failure
+name: diagnose-node-failure
 description: "Diagnose Node Failure using authorized Azure configuration and telemetry."
 ---
 

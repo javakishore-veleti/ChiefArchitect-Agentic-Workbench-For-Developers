@@ -1,5 +1,5 @@
 ---
-name: azure-aks-secrets-discover-secret-reference-inventory
+name: discover-secret-reference-inventory
 description: "Discover Secret Reference Inventory using authorized Azure configuration and telemetry."
 ---
 

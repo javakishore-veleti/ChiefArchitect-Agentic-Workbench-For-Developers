@@ -1,5 +1,5 @@
 ---
-name: shopify-diagnose-product
+name: diagnose-product
 description: Diagnose Shopify product, variant, option, inventory, media, metafield, publication, search and bulk-operation failures across configured shops and environments.
 ---
 

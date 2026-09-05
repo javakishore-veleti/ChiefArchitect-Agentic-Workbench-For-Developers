@@ -1,5 +1,5 @@
 ---
-name: azure-aks-secrets-audit-secret-handling
+name: audit-secret-handling
 description: "Audit Secret Handling using authorized Azure configuration and telemetry."
 ---
 

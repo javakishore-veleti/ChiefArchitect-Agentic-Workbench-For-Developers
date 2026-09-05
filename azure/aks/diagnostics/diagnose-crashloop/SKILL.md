@@ -1,5 +1,5 @@
 ---
-name: azure-aks-diagnostics-diagnose-crashloop
+name: diagnose-crashloop
 description: "Diagnose Crashloop using authorized Azure configuration and telemetry."
 ---
 

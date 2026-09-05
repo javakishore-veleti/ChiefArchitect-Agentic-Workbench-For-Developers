@@ -1,5 +1,5 @@
 ---
-name: azure-aks-services-compare-service-environments
+name: compare-service-environments
 description: "Compare Service Environments using authorized Azure configuration and telemetry."
 ---
 

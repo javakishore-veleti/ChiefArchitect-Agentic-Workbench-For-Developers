@@ -1,5 +1,5 @@
 ---
-name: azure-cache-redis-analyze-cache-hit-rate
+name: analyze-cache-hit-rate
 description: "Analyze Cache Hit Rate using authorized Azure configuration and telemetry."
 ---
 
