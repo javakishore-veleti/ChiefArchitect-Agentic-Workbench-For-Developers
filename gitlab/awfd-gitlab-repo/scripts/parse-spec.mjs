@@ -11,8 +11,11 @@
 import fs from 'node:fs';
 
 const NAME_COLUMNS = ['service', 'repository', 'repo', 'project', 'name', 'component'];
-// Outermost grouping first. A specification that names several of these nests them in this order.
-const TIER_COLUMNS = ['portfolio', 'domain', 'division', 'group', 'program', 'subgroup', 'context', 'system', 'team'];
+// Outermost grouping first. A specification that names several of these nests
+// them in this order. These are organizational columns only: architectural
+// columns such as context or system group by design rather than by ownership,
+// so they are used only when --tiers names them explicitly.
+const TIER_COLUMNS = ['portfolio', 'domain', 'division', 'group', 'program', 'subgroup', 'team'];
 
 export function toPath(value) {
   return String(value ?? '').toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');

@@ -14,7 +14,7 @@ Turn a described repository estate into GitLab groups, subgroups and projects. T
 Accept the estate description in whichever form the user supplies, and normalize it with `scripts/parse-spec.mjs` before doing anything else.
 
 - **JSON manifest** — `--json <file>`, already in the manifest shape below.
-- **Markdown table** — `--markdown <file>`, any table whose headers name a repository and its grouping. Column headers are matched case-insensitively: a name column (`service`, `repo`, `repository`, `project`, `name`), and grouping columns (`portfolio`, `group`, `program`, `subgroup`, `team`, `domain`). Remaining columns are carried as metadata.
+- **Markdown table** — `--markdown <file>`, any table whose headers name a repository and its grouping. Column headers are matched case-insensitively: a name column (`service`, `repo`, `repository`, `project`, `name`), and organizational grouping columns, nested outermost first: `portfolio`, `domain`, `division`, `group`, `program`, `subgroup`, `team`. Remaining columns are carried as metadata. Architectural columns such as `context` or `system` group by design rather than ownership, so they are used only when `--tiers` names them explicitly.
 - **Described in conversation** — write the user's description to a JSON manifest first, show it, and have them confirm it. Never provision directly from prose.
 
 Normalize every name to a GitLab path: lowercase, non-alphanumeric runs collapsed to a single hyphen, no leading or trailing hyphen. Report any name that collides after normalization instead of silently merging.

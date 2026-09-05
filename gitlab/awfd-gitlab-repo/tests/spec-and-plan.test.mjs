@@ -44,7 +44,7 @@ test('carries unmapped columns as metadata and drops empty cells', () => {
 
 test('collapses a tier that repeats its parent', () => {
   const manifest = parseMarkdown(`
-| Service | Portfolio | Context |
+| Service | Portfolio | Program |
 |---|---|---|
 | \`worklist-service\` | Lab Ops | Lab Ops |
 | \`accessioning-service\` | Lab Ops | Specimen |
@@ -52,6 +52,16 @@ test('collapses a tier that repeats its parent', () => {
   assert.equal(manifest.projects[0].group, 'lab-ops');
   assert.equal(manifest.projects[1].group, 'lab-ops/specimen');
   assert.equal(manifest.groups.filter(g => g.full === 'lab-ops/lab-ops').length, 0);
+});
+
+test('ignores architectural columns unless --tiers names them', () => {
+  const spec = `
+| Service | Portfolio | Context |
+|---|---|---|
+| \`worklist-service\` | Lab Ops | Operations |
+`;
+  assert.equal(parseMarkdown(spec).projects[0].group, 'lab-ops');
+  assert.equal(parseMarkdown(spec, {tiers: ['portfolio', 'context']}).projects[0].group, 'lab-ops/operations');
 });
 
 test('honours an explicit tier ordering', () => {
@@ -92,7 +102,16 @@ test('parses the shipped AKIV architecture document end to end', () => {
   const manifest = parseMarkdown(fs.readFileSync(doc, 'utf8'));
   assert.equal(manifest.projects.length, 40);
   assert.equal(manifest.collisions.length, 0);
-  assert.ok(manifest.projects.some(p => p.group === 'lab-ops/specimen' && p.name === 'accessioning-service'));
+  assert.equal(manifest.groups.length, 22);
+  // The catalog carries its own Program column, so the default tiers reproduce
+  // the repository layout the document declares in section 11.
+  for (const [name, group] of [
+    ['accessioning-service', 'lab-ops/specimen'],
+    ['worklist-service', 'lab-ops/operations'],
+    ['client-account-service', 'providers/client-management'],
+    ['deidentification-service', 'research/deidentification'],
+    ['audit-service', 'platform/audit']
+  ]) assert.equal(manifest.projects.find(p => p.name === name)?.group, group, name);
 });
 
 // ---- the write gate
