@@ -12,6 +12,8 @@ AWFD uses feature, develop, release, and main branches. npm packages are publish
 
 The publish workflow rejects a tag made from any commit that is not in `main`. It publishes `@javakishore-veleti/awfd` first, domain packs next in stable alphabetical order, and `@javakishore-veleti/awfd-all` last.
 
+Prerelease versions such as `0.0.1-beta.1` are published with the `beta` npm dist-tag. Stable versions use `latest`, preventing a diagnostic prerelease from becoming the default installation.
+
 Publication requires the root Apache License 2.0 text and `"license": "Apache-2.0"` in every public package. The release verifier rejects any mismatch.
 
 ## One-time npm setup

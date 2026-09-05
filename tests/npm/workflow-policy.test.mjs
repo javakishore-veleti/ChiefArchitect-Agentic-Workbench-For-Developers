@@ -26,3 +26,10 @@ test("publishing is tag-only, main-ancestry guarded, and OIDC-based", async () =
   assert.match(workflow, /publish-packages\.mjs/);
   assert.doesNotMatch(workflow, /NPM_TOKEN|NODE_AUTH_TOKEN|secrets\./);
 });
+
+test("prereleases use a non-latest npm dist-tag", async () => {
+  const publisher = await read("scripts/publish-packages.mjs");
+  assert.match(publisher, /pkg\.version\.includes\("-"\)/);
+  assert.match(publisher, /"--tag", distTag/);
+  assert.match(publisher, /: "latest"/);
+});

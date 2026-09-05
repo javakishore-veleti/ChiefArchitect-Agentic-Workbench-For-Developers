@@ -40,6 +40,11 @@ for (const [file, manifest] of manifests) {
   if (manifest.version !== expected) {
     throw new Error(`${file}: expected version ${expected}, found ${manifest.version}`);
   }
+  for (const [dependency, version] of Object.entries(manifest.dependencies ?? {})) {
+    if (dependency.startsWith("@javakishore-veleti/awfd") && version !== expected) {
+      throw new Error(`${file}: expected internal dependency ${dependency}@${expected}, found ${version}`);
+    }
+  }
 }
 
 console.log(`Verified ${manifests.length} package versions at ${expected}.`);
