@@ -18,7 +18,7 @@ for(const base of discovery){
     if(!fs.existsSync(file)){errors.push(`missing ${path.relative(root,file)}`);continue;}
     const text=fs.readFileSync(file,'utf8');
     if(!text.startsWith('---\n')||!text.includes(`name: ${name}\n`)||!text.includes('\ndescription:'))errors.push(`invalid frontmatter in ${path.relative(root,file)}`);
-    const matches=[...text.matchAll(/`((?:angular|azure|databricks|datadog|github-actions|postgres|redis|shopify|spring-boot)\/[^`]+\/SKILL\.md)`/g)];
+    const matches=[...text.matchAll(/`((?:angular|azure|databricks|datadog|github-actions|gitlab|postgres|redis|shopify|spring-boot)\/[^`]+\/SKILL\.md)`/g)];
     if(matches.length!==1)errors.push(`expected one canonical target in ${path.relative(root,file)}`);
     else if(!fs.existsSync(path.join(root,matches[0][1])))errors.push(`broken canonical target ${matches[0][1]}`);
   }

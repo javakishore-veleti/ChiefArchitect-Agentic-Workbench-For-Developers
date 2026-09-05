@@ -152,48 +152,48 @@ Audit ──────── Observer of every context (append-only, no back-p
 
 Legend — **Pkg:** `jar` = executable jar on `eclipse-temurin`; `war` = WAR on Tomcat 9 base image. **Act:** actuator exposure — `min` = `health,info`; `std` = `health,info,metrics,loggers`; `full` = `*` (deliberate misconfiguration); `off` = actuator absent.
 
-| # | Service | Context | Portfolio | Boot | Java | Pkg | Persistence | Cache | Act | PHI |
-|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | `patient-identity-service` | Identity | Patients | 2.7 | 11 | jar | Oracle · Hibernate 5.6 | Caffeine | min | ✅ |
-| 2 | `patient-account-service` | Identity | Patients | 3.3 | 21 | jar | PostgreSQL · Hibernate 6.4 | Redis | std | ✅ |
-| 3 | `consent-service` | Identity | Patients | 3.2 | 17 | jar | PostgreSQL · Hibernate 6.1 | — | std | ✅ |
-| 4 | `appointment-service` | Scheduling | Patients | 3.4 | 21 | jar | PostgreSQL · Hibernate 6.6 | Redis | std | ✅ |
-| 5 | `service-center-service` | Scheduling | Patients | 4.0 | 21 | jar | PostgreSQL · Hibernate 6.6 | Caffeine | std | ❌ |
-| 6 | `order-intake-service` | Ordering | Providers | 2.7 | 11 | war | Oracle · Hibernate 5.6 | — | **full** | ✅ |
-| 7 | `order-validation-service` | Ordering | Providers | 3.1 | 17 | jar | PostgreSQL · Hibernate 6.1 | Caffeine | std | ✅ |
-| 8 | `requisition-service` | Ordering | Providers | 3.2 | 17 | jar | MongoDB (no ORM) | — | std | ✅ |
-| 9 | `specimen-collection-service` | Specimen | Lab Ops | 3.3 | 21 | jar | PostgreSQL · Hibernate 6.4 | — | std | ✅ |
-| 10 | `accessioning-service` | Specimen | Lab Ops | 2.7 | 11 | war | Oracle · Hibernate 5.6 | — | **off** | ✅ |
-| 11 | `chain-of-custody-service` | Specimen | Lab Ops | 3.2 | 17 | jar | PostgreSQL (append-only) | — | std | ✅ |
-| 12 | `courier-logistics-service` | Specimen | Lab Ops | 3.4 | 21 | jar | PostgreSQL · PostGIS | Redis | std | ❌ |
-| 13 | `worklist-service` | Lab Ops | Lab Ops | 3.1 | 17 | jar | PostgreSQL · Hibernate 6.1 | Caffeine | std | ✅ |
-| 14 | `instrument-interface-service` | Lab Ops | Lab Ops | 2.7 | 11 | war | Oracle · plain JDBC | — | min | ✅ |
-| 15 | `quality-control-service` | Lab Ops | Lab Ops | 3.3 | 21 | jar | PostgreSQL · Hibernate 6.4 | — | std | ❌ |
-| 16 | `result-service` | Results | Patients | 3.4 | 21 | jar | PostgreSQL · Hibernate 6.6 | Redis | std | ✅ |
-| 17 | `result-release-service` | Results | Patients | 4.0 | 21 | jar | PostgreSQL · Hibernate 6.6 | — | std | ✅ |
-| 18 | `critical-value-service` | Results | Providers | 3.3 | 21 | jar | PostgreSQL · Hibernate 6.4 | — | std | ✅ |
-| 19 | `report-rendering-service` | Results | Patients | 3.2 | 17 | jar | Blob + PostgreSQL metadata | — | std | ✅ |
-| 20 | `compendium-service` | Compendium | Lab Ops | 4.1 | 21 | jar | PostgreSQL · Hibernate 6.6 | Caffeine | std | ❌ |
-| 21 | `reference-range-service` | Compendium | Lab Ops | 3.3 | 21 | jar | PostgreSQL · Hibernate 6.4 | Caffeine | std | ❌ |
-| 22 | `terminology-service` | Compendium | Lab Ops | 3.4 | 21 | jar | PostgreSQL · Hibernate 6.6 | Caffeine | std | ❌ |
-| 23 | `eligibility-service` | Insurance | Patients | 2.7 | 11 | war | Oracle · Hibernate 5.6 | — | min | ✅ |
-| 24 | `prior-authorization-service` | Insurance | Patients | 3.3 | 21 | jar | PostgreSQL · Hibernate 6.4 | — | std | ✅ |
-| 25 | `claim-service` | Billing | Patients | 2.7 | 11 | war | Oracle · Hibernate 5.6 | — | min | ✅ |
-| 26 | `remittance-service` | Billing | Patients | 3.1 | 17 | jar | PostgreSQL · Hibernate 6.1 | — | std | ✅ |
-| 27 | `invoice-service` | Billing | Patients | 3.4 | 21 | jar | PostgreSQL · Hibernate 6.6 | Redis | std | ✅ |
-| 28 | `payment-service` | Billing | Patients | 4.0 | 21 | jar | PostgreSQL · Hibernate 6.6 | — | std | ✅ |
-| 29 | `price-estimate-service` | Billing | Patients | 4.1 | 21 | jar | PostgreSQL · Hibernate 6.6 | Caffeine | std | ❌ |
-| 30 | `shop-catalog-service` | Commerce | Patients | 4.1 | 21 | jar | PostgreSQL · Hibernate 6.6 | Caffeine | std | ❌ |
-| 31 | `cart-checkout-service` | Commerce | Patients | 4.0 | 21 | jar | PostgreSQL + Redis session | Redis | std | ✅ |
-| 32 | `client-account-service` | Client Mgmt | Providers | 3.2 | 17 | jar | PostgreSQL · Hibernate 6.1 | Caffeine | std | ❌ |
-| 33 | `ordering-provider-service` | Client Mgmt | Providers | 3.3 | 21 | jar | PostgreSQL · Hibernate 6.4 | Caffeine | std | ❌ |
-| 34 | `hl7-gateway-service` | Interop | Providers | 2.7 | 11 | war | Oracle · plain JDBC | — | min | ✅ |
-| 35 | `fhir-gateway-service` | Interop | Providers | 4.1 | 21 | jar | PostgreSQL · Hibernate 6.6 | Redis | std | ✅ |
-| 36 | `emr-integration-service` | Interop | Providers | 3.2 | 17 | jar | PostgreSQL · Hibernate 6.1 | — | std | ✅ |
-| 37 | `notification-service` | Notification | Patients | 3.4 | 21 | jar | PostgreSQL · Hibernate 6.6 | Redis | std | ✅ |
-| 38 | `utilization-analytics-service` | Analytics | Lab Ops | 4.0 | 21 | jar | PostgreSQL + Synapse | — | std | ❌ |
-| 39 | `deidentification-service` | Research | Research | 3.4 | 21 | jar | PostgreSQL · Hibernate 6.6 | — | std | ✅→de-id |
-| 40 | `audit-service` | Audit | Platform | 3.3 | 21 | jar | PostgreSQL (append-only) | — | std | adjacent |
+| # | Service | Context | Portfolio | Program | Boot | Java | Pkg | Persistence | Cache | Act | PHI |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | `patient-identity-service` | Identity | Patients | identity | 2.7 | 11 | jar | Oracle · Hibernate 5.6 | Caffeine | min | ✅ |
+| 2 | `patient-account-service` | Identity | Patients | identity | 3.3 | 21 | jar | PostgreSQL · Hibernate 6.4 | Redis | std | ✅ |
+| 3 | `consent-service` | Identity | Patients | identity | 3.2 | 17 | jar | PostgreSQL · Hibernate 6.1 | — | std | ✅ |
+| 4 | `appointment-service` | Scheduling | Patients | scheduling | 3.4 | 21 | jar | PostgreSQL · Hibernate 6.6 | Redis | std | ✅ |
+| 5 | `service-center-service` | Scheduling | Patients | scheduling | 4.0 | 21 | jar | PostgreSQL · Hibernate 6.6 | Caffeine | std | ❌ |
+| 6 | `order-intake-service` | Ordering | Providers | ordering | 2.7 | 11 | war | Oracle · Hibernate 5.6 | — | **full** | ✅ |
+| 7 | `order-validation-service` | Ordering | Providers | ordering | 3.1 | 17 | jar | PostgreSQL · Hibernate 6.1 | Caffeine | std | ✅ |
+| 8 | `requisition-service` | Ordering | Providers | ordering | 3.2 | 17 | jar | MongoDB (no ORM) | — | std | ✅ |
+| 9 | `specimen-collection-service` | Specimen | Lab Ops | specimen | 3.3 | 21 | jar | PostgreSQL · Hibernate 6.4 | — | std | ✅ |
+| 10 | `accessioning-service` | Specimen | Lab Ops | specimen | 2.7 | 11 | war | Oracle · Hibernate 5.6 | — | **off** | ✅ |
+| 11 | `chain-of-custody-service` | Specimen | Lab Ops | specimen | 3.2 | 17 | jar | PostgreSQL (append-only) | — | std | ✅ |
+| 12 | `courier-logistics-service` | Specimen | Lab Ops | specimen | 3.4 | 21 | jar | PostgreSQL · PostGIS | Redis | std | ❌ |
+| 13 | `worklist-service` | Lab Ops | Lab Ops | operations | 3.1 | 17 | jar | PostgreSQL · Hibernate 6.1 | Caffeine | std | ✅ |
+| 14 | `instrument-interface-service` | Lab Ops | Lab Ops | operations | 2.7 | 11 | war | Oracle · plain JDBC | — | min | ✅ |
+| 15 | `quality-control-service` | Lab Ops | Lab Ops | operations | 3.3 | 21 | jar | PostgreSQL · Hibernate 6.4 | — | std | ❌ |
+| 16 | `result-service` | Results | Patients | results | 3.4 | 21 | jar | PostgreSQL · Hibernate 6.6 | Redis | std | ✅ |
+| 17 | `result-release-service` | Results | Patients | results | 4.0 | 21 | jar | PostgreSQL · Hibernate 6.6 | — | std | ✅ |
+| 18 | `critical-value-service` | Results | Providers | results | 3.3 | 21 | jar | PostgreSQL · Hibernate 6.4 | — | std | ✅ |
+| 19 | `report-rendering-service` | Results | Patients | results | 3.2 | 17 | jar | Blob + PostgreSQL metadata | — | std | ✅ |
+| 20 | `compendium-service` | Compendium | Lab Ops | compendium | 4.1 | 21 | jar | PostgreSQL · Hibernate 6.6 | Caffeine | std | ❌ |
+| 21 | `reference-range-service` | Compendium | Lab Ops | compendium | 3.3 | 21 | jar | PostgreSQL · Hibernate 6.4 | Caffeine | std | ❌ |
+| 22 | `terminology-service` | Compendium | Lab Ops | compendium | 3.4 | 21 | jar | PostgreSQL · Hibernate 6.6 | Caffeine | std | ❌ |
+| 23 | `eligibility-service` | Insurance | Patients | insurance | 2.7 | 11 | war | Oracle · Hibernate 5.6 | — | min | ✅ |
+| 24 | `prior-authorization-service` | Insurance | Patients | insurance | 3.3 | 21 | jar | PostgreSQL · Hibernate 6.4 | — | std | ✅ |
+| 25 | `claim-service` | Billing | Patients | billing | 2.7 | 11 | war | Oracle · Hibernate 5.6 | — | min | ✅ |
+| 26 | `remittance-service` | Billing | Patients | billing | 3.1 | 17 | jar | PostgreSQL · Hibernate 6.1 | — | std | ✅ |
+| 27 | `invoice-service` | Billing | Patients | billing | 3.4 | 21 | jar | PostgreSQL · Hibernate 6.6 | Redis | std | ✅ |
+| 28 | `payment-service` | Billing | Patients | billing | 4.0 | 21 | jar | PostgreSQL · Hibernate 6.6 | — | std | ✅ |
+| 29 | `price-estimate-service` | Billing | Patients | billing | 4.1 | 21 | jar | PostgreSQL · Hibernate 6.6 | Caffeine | std | ❌ |
+| 30 | `shop-catalog-service` | Commerce | Patients | commerce | 4.1 | 21 | jar | PostgreSQL · Hibernate 6.6 | Caffeine | std | ❌ |
+| 31 | `cart-checkout-service` | Commerce | Patients | commerce | 4.0 | 21 | jar | PostgreSQL + Redis session | Redis | std | ✅ |
+| 32 | `client-account-service` | Client Mgmt | Providers | client-management | 3.2 | 17 | jar | PostgreSQL · Hibernate 6.1 | Caffeine | std | ❌ |
+| 33 | `ordering-provider-service` | Client Mgmt | Providers | client-management | 3.3 | 21 | jar | PostgreSQL · Hibernate 6.4 | Caffeine | std | ❌ |
+| 34 | `hl7-gateway-service` | Interop | Providers | interop | 2.7 | 11 | war | Oracle · plain JDBC | — | min | ✅ |
+| 35 | `fhir-gateway-service` | Interop | Providers | interop | 4.1 | 21 | jar | PostgreSQL · Hibernate 6.6 | Redis | std | ✅ |
+| 36 | `emr-integration-service` | Interop | Providers | interop | 3.2 | 17 | jar | PostgreSQL · Hibernate 6.1 | — | std | ✅ |
+| 37 | `notification-service` | Notification | Patients | notification | 3.4 | 21 | jar | PostgreSQL · Hibernate 6.6 | Redis | std | ✅ |
+| 38 | `utilization-analytics-service` | Analytics | Lab Ops | analytics | 4.0 | 21 | jar | PostgreSQL + Synapse | — | std | ❌ |
+| 39 | `deidentification-service` | Research | Research | deidentification | 3.4 | 21 | jar | PostgreSQL · Hibernate 6.6 | — | std | ✅→de-id |
+| 40 | `audit-service` | Audit | Platform | audit | 3.3 | 21 | jar | PostgreSQL (append-only) | — | std | adjacent |
 
 ### Distribution summary
 
@@ -610,8 +610,10 @@ gitlab.akiv.example/
 │   ├── operations/{worklist-service, instrument-interface-service, quality-control-service}
 │   ├── compendium/{compendium-service, reference-range-service, terminology-service}
 │   └── analytics/{utilization-analytics-service}
-├── research/{deidentification-service}
-└── platform/{audit-service}
+├── research/
+│   └── deidentification/{deidentification-service}
+└── platform/
+    └── audit/{audit-service}
 ```
 
 Each repository contains: `pom.xml` or `build.gradle`, `src/`, `Dockerfile`, `helm/` chart, `.gitlab-ci.yml`, and a `catalog-info.yaml` for Backstage.
