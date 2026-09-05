@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "package": "@javakishore-veleti/awfd-github-actions",
+  "domain": "github-actions",
+  "payloadRoot": "dist",
+  "skills": [
+    {
+      "id": "awfd-github-actions",
+      "canonical": "github-actions/diagnose-github-actions",
+      "coordinate": "awfd:github-actions"
+    }
+  ],
+  "files": [
+    ".agents/skills/awfd-github-actions/SKILL.md",
+    ".claude/skills/awfd-github-actions/SKILL.md",
+    ".github/skills/awfd-github-actions/SKILL.md",
+    "github-actions/diagnose-github-actions/knowledge/evidence.jsonl",
+    "github-actions/diagnose-github-actions/patterns/artifacts-cache.md",
+    "github-actions/diagnose-github-actions/patterns/build-test.md",
+    "github-actions/diagnose-github-actions/patterns/deploy-rollback.md",
+    "github-actions/diagnose-github-actions/patterns/index.json",
+    "github-actions/diagnose-github-actions/patterns/observability-cost.md",
+    "github-actions/diagnose-github-actions/patterns/oidc-environments.md",
+    "github-actions/diagnose-github-actions/patterns/reusable-workflows.md",
+    "github-actions/diagnose-github-actions/patterns/runners.md",
+    "github-actions/diagnose-github-actions/patterns/security-supply-chain.md",
+    "github-actions/diagnose-github-actions/scripts/classify-issue.mjs",
+    "github-actions/diagnose-github-actions/scripts/redact.mjs",
+    "github-actions/diagnose-github-actions/scripts/resolve-context.mjs",
+    "github-actions/diagnose-github-actions/scripts/validate-plan.mjs",
+    "github-actions/diagnose-github-actions/scripts/validate-workflow.mjs",
+    "github-actions/diagnose-github-actions/SKILL.md",
+    "github-actions/diagnose-github-actions/tests/config-evidence.test.mjs",
+    "github-actions/diagnose-github-actions/tests/router.test.mjs",
+    "github-actions/diagnose-github-actions/tests/safety.test.mjs",
+    "github-actions/shared/config/github-actions-config.example.json",
+    "github-actions/shared/config/github-actions-config.schema.json",
+    "github-actions/shared/config/load-config.mjs"
+  ]
+}

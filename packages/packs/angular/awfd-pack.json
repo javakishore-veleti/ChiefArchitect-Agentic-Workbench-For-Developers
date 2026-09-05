@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "package": "@javakishore-veleti/awfd-angular",
+  "domain": "angular",
+  "payloadRoot": "dist",
+  "skills": [
+    {
+      "id": "awfd-angular",
+      "canonical": "angular/diagnose-angular",
+      "coordinate": "awfd:angular"
+    }
+  ],
+  "files": [
+    ".agents/skills/awfd-angular/SKILL.md",
+    ".claude/skills/awfd-angular/SKILL.md",
+    ".github/skills/awfd-angular/SKILL.md",
+    "angular/diagnose-angular/knowledge/api-testing-build.jsonl",
+    "angular/diagnose-angular/knowledge/framework-components.jsonl",
+    "angular/diagnose-angular/knowledge/routing-state.jsonl",
+    "angular/diagnose-angular/patterns/build-tooling.md",
+    "angular/diagnose-angular/patterns/components-signals.md",
+    "angular/diagnose-angular/patterns/forms-templates.md",
+    "angular/diagnose-angular/patterns/http-auth.md",
+    "angular/diagnose-angular/patterns/index.json",
+    "angular/diagnose-angular/patterns/routing-navigation.md",
+    "angular/diagnose-angular/patterns/ssr-hydration.md",
+    "angular/diagnose-angular/patterns/state-rxjs.md",
+    "angular/diagnose-angular/patterns/testing.md",
+    "angular/diagnose-angular/scripts/classify-issue.mjs",
+    "angular/diagnose-angular/scripts/compare-contexts.mjs",
+    "angular/diagnose-angular/scripts/summarize-diagnostics.mjs",
+    "angular/diagnose-angular/scripts/validate-plan.mjs",
+    "angular/diagnose-angular/SKILL.md",
+    "angular/diagnose-angular/tests/api-testing-build.test.mjs",
+    "angular/diagnose-angular/tests/foundation.test.mjs",
+    "angular/diagnose-angular/tests/framework-evidence.test.mjs",
+    "angular/diagnose-angular/tests/routing-state-evidence.test.mjs",
+    "angular/shared/config/angular-config.example.json",
+    "angular/shared/config/angular-config.schema.json",
+    "angular/shared/config/load-config.mjs",
+    "angular/shared/config/resolve-config.mjs",
+    "angular/shared/README.md",
+    "angular/shared/vocabulary/angular-vocabulary.example.json",
+    "angular/shared/vocabulary/angular-vocabulary.schema.json",
+    "angular/shared/vocabulary/resolve-term.mjs"
+  ]
+}
