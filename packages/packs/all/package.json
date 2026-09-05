@@ -1,6 +1,6 @@
 {
   "name": "@javakishore-veleti/awfd-all",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "description": "Complete Agentic Workbench for Developers skill collection.",
   "license": "Apache-2.0",
   "type": "module",
@@ -13,16 +13,16 @@
     "prepack": "node ../../../scripts/build-packs.mjs all"
   },
   "dependencies": {
-    "@javakishore-veleti/awfd": "0.1.0",
-    "@javakishore-veleti/awfd-angular": "0.1.0",
-    "@javakishore-veleti/awfd-azure": "0.1.0",
-    "@javakishore-veleti/awfd-databricks": "0.1.0",
-    "@javakishore-veleti/awfd-datadog": "0.1.0",
-    "@javakishore-veleti/awfd-github-actions": "0.1.0",
-    "@javakishore-veleti/awfd-postgres": "0.1.0",
-    "@javakishore-veleti/awfd-redis": "0.1.0",
-    "@javakishore-veleti/awfd-shopify": "0.1.0",
-    "@javakishore-veleti/awfd-spring-boot": "0.1.0"
+    "@javakishore-veleti/awfd": "0.0.1",
+    "@javakishore-veleti/awfd-angular": "0.0.1",
+    "@javakishore-veleti/awfd-azure": "0.0.1",
+    "@javakishore-veleti/awfd-databricks": "0.0.1",
+    "@javakishore-veleti/awfd-datadog": "0.0.1",
+    "@javakishore-veleti/awfd-github-actions": "0.0.1",
+    "@javakishore-veleti/awfd-postgres": "0.0.1",
+    "@javakishore-veleti/awfd-redis": "0.0.1",
+    "@javakishore-veleti/awfd-shopify": "0.0.1",
+    "@javakishore-veleti/awfd-spring-boot": "0.0.1"
   },
   "publishConfig": {
     "access": "public",

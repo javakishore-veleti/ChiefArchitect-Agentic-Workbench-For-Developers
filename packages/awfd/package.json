@@ -1,6 +1,6 @@
 {
   "name": "@javakishore-veleti/awfd",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "description": "Safe installer for AWFD agent skills",
   "type": "module",
   "bin": {

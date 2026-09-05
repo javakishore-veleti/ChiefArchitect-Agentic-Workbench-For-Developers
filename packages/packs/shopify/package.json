@@ -1,6 +1,6 @@
 {
   "name": "@javakishore-veleti/awfd-shopify",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "description": "AWFD Shopify agent skill pack.",
   "license": "Apache-2.0",
   "type": "module",
@@ -14,7 +14,7 @@
     "prepack": "node ../../../scripts/build-packs.mjs shopify"
   },
   "dependencies": {
-    "@javakishore-veleti/awfd": "0.1.0"
+    "@javakishore-veleti/awfd": "0.0.1"
   },
   "publishConfig": {
     "access": "public",

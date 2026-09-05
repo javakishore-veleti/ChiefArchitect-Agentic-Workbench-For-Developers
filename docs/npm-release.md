@@ -28,13 +28,13 @@ Create the protected `npm` environment in GitHub before the first release. The w
 ## Release commands
 
 ```bash
-git switch release/v0.1.0
+git switch release/v0.0.1
 npm ci
 npm run release:check
 git switch main
 git pull --ff-only
-git tag -a v0.1.0 -m "AWFD v0.1.0"
-git push origin v0.1.0
+git tag -a v0.0.1 -m "AWFD v0.0.1"
+git push origin v0.0.1
 ```
 
 Do not reuse a version. npm package versions are immutable; the workflow skips a package only when that exact name and version already exists.
