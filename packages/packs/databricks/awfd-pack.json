@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "package": "@javakishore-veleti/awfd-databricks",
+  "domain": "databricks",
+  "payloadRoot": "dist",
+  "skills": [
+    {
+      "id": "awfd-databricks",
+      "canonical": "databricks/diagnose-databricks",
+      "coordinate": "awfd:databricks"
+    }
+  ],
+  "files": [
+    ".agents/skills/awfd-databricks/SKILL.md",
+    ".claude/skills/awfd-databricks/SKILL.md",
+    ".github/skills/awfd-databricks/SKILL.md",
+    "databricks/diagnose-databricks/config/workbench.template.json",
+    "databricks/diagnose-databricks/knowledge/evidence.jsonl",
+    "databricks/diagnose-databricks/patterns/ai-ml-serving.md",
+    "databricks/diagnose-databricks/patterns/architecture-medallion.md",
+    "databricks/diagnose-databricks/patterns/compute-serverless.md",
+    "databricks/diagnose-databricks/patterns/governance-unity-catalog.md",
+    "databricks/diagnose-databricks/patterns/index.json",
+    "databricks/diagnose-databricks/patterns/ingestion-lakeflow.md",
+    "databricks/diagnose-databricks/patterns/reliability-cost.md",
+    "databricks/diagnose-databricks/patterns/sharing-interoperability.md",
+    "databricks/diagnose-databricks/patterns/sql-bi.md",
+    "databricks/diagnose-databricks/patterns/workspace-networking.md",
+    "databricks/diagnose-databricks/references/2026-platform-notes.md",
+    "databricks/diagnose-databricks/references/configuration.md",
+    "databricks/diagnose-databricks/scripts/redact.mjs",
+    "databricks/diagnose-databricks/scripts/resolve-config.mjs",
+    "databricks/diagnose-databricks/scripts/validate-plan.mjs",
+    "databricks/diagnose-databricks/SKILL.md",
+    "databricks/diagnose-databricks/tests/router-and-safety.test.mjs"
+  ]
+}

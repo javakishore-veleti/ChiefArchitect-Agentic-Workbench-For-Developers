@@ -1,0 +1,39 @@
+{
+  "name": "@javakishore-veleti/awfd-all",
+  "version": "0.0.1",
+  "description": "Complete Agentic Workbench for Developers skill collection.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "files": [
+    "awfd-pack.json",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "node ../../../scripts/build-packs.mjs",
+    "prepack": "node ../../../scripts/build-packs.mjs all"
+  },
+  "dependencies": {
+    "@javakishore-veleti/awfd": "0.0.1",
+    "@javakishore-veleti/awfd-angular": "0.0.1",
+    "@javakishore-veleti/awfd-azure": "0.0.1",
+    "@javakishore-veleti/awfd-databricks": "0.0.1",
+    "@javakishore-veleti/awfd-datadog": "0.0.1",
+    "@javakishore-veleti/awfd-github-actions": "0.0.1",
+    "@javakishore-veleti/awfd-postgres": "0.0.1",
+    "@javakishore-veleti/awfd-redis": "0.0.1",
+    "@javakishore-veleti/awfd-shopify": "0.0.1",
+    "@javakishore-veleti/awfd-spring-boot": "0.0.1"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/javakishore-veleti/ChiefArchitect-Agentic-Workbench-For-Developers.git",
+    "directory": "packages/packs/all"
+  },
+  "engines": {
+    "node": ">=22.14"
+  }
+}
