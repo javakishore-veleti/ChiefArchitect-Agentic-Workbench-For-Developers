@@ -1,5 +1,5 @@
 ---
-name: azure-auth-entra-compare-identity-environments
+name: compare-identity-environments
 description: "Compare Identity Environments using authorized Azure configuration and telemetry."
 ---
 

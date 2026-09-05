@@ -1,5 +1,5 @@
 ---
-name: azure-cosmosdb-analyze-partition-distribution
+name: analyze-partition-distribution
 description: "Analyze Partition Distribution using authorized Azure configuration and telemetry."
 ---
 

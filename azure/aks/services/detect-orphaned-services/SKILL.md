@@ -1,5 +1,5 @@
 ---
-name: azure-aks-services-detect-orphaned-services
+name: detect-orphaned-services
 description: "Detect Orphaned Services using authorized Azure configuration and telemetry."
 ---
 

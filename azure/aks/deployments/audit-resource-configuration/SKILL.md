@@ -1,5 +1,5 @@
 ---
-name: azure-aks-deployments-audit-resource-configuration
+name: audit-resource-configuration
 description: "Audit Resource Configuration using authorized Azure configuration and telemetry."
 ---
 

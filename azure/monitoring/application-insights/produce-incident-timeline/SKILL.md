@@ -1,5 +1,5 @@
 ---
-name: azure-monitoring-application-insights-produce-incident-timeline
+name: produce-incident-timeline
 description: "Produce Incident Timeline using authorized Azure configuration and telemetry."
 ---
 

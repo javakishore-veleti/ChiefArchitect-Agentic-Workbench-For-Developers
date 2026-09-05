@@ -1,5 +1,5 @@
 ---
-name: azure-cache-redis-diagnose-redis-connectivity
+name: diagnose-redis-connectivity
 description: "Diagnose Redis Connectivity using authorized Azure configuration and telemetry."
 ---
 

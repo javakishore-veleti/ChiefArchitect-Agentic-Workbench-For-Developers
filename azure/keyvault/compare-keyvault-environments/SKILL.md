@@ -1,5 +1,5 @@
 ---
-name: azure-keyvault-compare-keyvault-environments
+name: compare-keyvault-environments
 description: "Compare Keyvault Environments using authorized Azure configuration and telemetry."
 ---
 

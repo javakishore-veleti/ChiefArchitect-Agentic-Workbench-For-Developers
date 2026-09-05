@@ -1,5 +1,5 @@
 ---
-name: azure-aks-deployments-validate-deployment-manifests
+name: validate-deployment-manifests
 description: "Validate Deployment Manifests using authorized Azure configuration and telemetry."
 ---
 

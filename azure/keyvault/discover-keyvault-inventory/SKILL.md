@@ -1,5 +1,5 @@
 ---
-name: azure-keyvault-discover-keyvault-inventory
+name: discover-keyvault-inventory
 description: "Discover Keyvault Inventory using authorized Azure configuration and telemetry."
 ---
 

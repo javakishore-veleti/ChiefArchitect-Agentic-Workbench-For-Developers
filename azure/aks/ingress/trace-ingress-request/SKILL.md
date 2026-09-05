@@ -1,5 +1,5 @@
 ---
-name: azure-aks-ingress-trace-ingress-request
+name: trace-ingress-request
 description: "Trace Ingress Request using authorized Azure configuration and telemetry."
 ---
 

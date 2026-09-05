@@ -1,5 +1,5 @@
 ---
-name: azure-aks-secrets-validate-secret-references
+name: validate-secret-references
 description: "Validate Secret References using authorized Azure configuration and telemetry."
 ---
 

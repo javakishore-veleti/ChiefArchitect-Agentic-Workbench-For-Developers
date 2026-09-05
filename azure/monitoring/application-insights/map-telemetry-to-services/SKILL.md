@@ -1,5 +1,5 @@
 ---
-name: azure-monitoring-application-insights-map-telemetry-to-services
+name: map-telemetry-to-services
 description: "Map Telemetry To Services using authorized Azure configuration and telemetry."
 ---
 

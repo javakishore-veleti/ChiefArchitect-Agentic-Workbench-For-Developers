@@ -1,5 +1,5 @@
 ---
-name: azure-aks-scaling-analyze-scaling-configuration
+name: analyze-scaling-configuration
 description: "Analyze Scaling Configuration using authorized Azure configuration and telemetry."
 ---
 

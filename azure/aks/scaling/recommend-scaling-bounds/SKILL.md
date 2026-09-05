@@ -1,5 +1,5 @@
 ---
-name: azure-aks-scaling-recommend-scaling-bounds
+name: recommend-scaling-bounds
 description: "Recommend Scaling Bounds using authorized Azure configuration and telemetry."
 ---
 

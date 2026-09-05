@@ -1,5 +1,5 @@
 ---
-name: azure-monitoring-application-insights-analyze-dependency-latency
+name: analyze-dependency-latency
 description: "Analyze Dependency Latency using authorized Azure configuration and telemetry."
 ---
 

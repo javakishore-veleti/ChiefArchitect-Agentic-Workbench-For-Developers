@@ -1,5 +1,5 @@
 ---
-name: azure-aks-services-map-services-to-workloads
+name: map-services-to-workloads
 description: "Map Services To Workloads using authorized Azure configuration and telemetry."
 ---
 

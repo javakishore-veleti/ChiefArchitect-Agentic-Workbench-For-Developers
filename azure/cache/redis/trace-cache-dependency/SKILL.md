@@ -1,5 +1,5 @@
 ---
-name: azure-cache-redis-trace-cache-dependency
+name: trace-cache-dependency
 description: "Trace Cache Dependency using authorized Azure configuration and telemetry."
 ---
 

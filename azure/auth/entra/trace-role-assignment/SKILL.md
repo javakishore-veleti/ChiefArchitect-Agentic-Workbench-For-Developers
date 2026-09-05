@@ -1,5 +1,5 @@
 ---
-name: azure-auth-entra-trace-role-assignment
+name: trace-role-assignment
 description: "Trace Role Assignment using authorized Azure configuration and telemetry."
 ---
 

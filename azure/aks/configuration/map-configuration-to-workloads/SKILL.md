@@ -1,5 +1,5 @@
 ---
-name: azure-aks-configuration-map-configuration-to-workloads
+name: map-configuration-to-workloads
 description: "Map Configuration To Workloads using authorized Azure configuration and telemetry."
 ---
 

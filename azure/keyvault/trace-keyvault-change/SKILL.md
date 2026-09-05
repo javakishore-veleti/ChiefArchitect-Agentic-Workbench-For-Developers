@@ -1,5 +1,5 @@
 ---
-name: azure-keyvault-trace-keyvault-change
+name: trace-keyvault-change
 description: "Trace Keyvault Change using authorized Azure configuration and telemetry."
 ---
 

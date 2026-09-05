@@ -1,5 +1,5 @@
 ---
-name: shopify-storefront-api
+name: diagnose-storefront-api
 description: Diagnose cross-cutting Shopify Storefront GraphQL authentication, context, publication, version, throttling, Hydrogen transport and response failures; route resource-specific failures to their domain skill.
 ---
 

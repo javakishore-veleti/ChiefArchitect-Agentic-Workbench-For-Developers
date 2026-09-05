@@ -1,5 +1,5 @@
 ---
-name: azure-aks-services-audit-service-exposure
+name: audit-service-exposure
 description: "Audit Service Exposure using authorized Azure configuration and telemetry."
 ---
 

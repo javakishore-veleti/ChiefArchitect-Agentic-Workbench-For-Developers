@@ -1,5 +1,5 @@
 ---
-name: azure-cosmosdb-compare-cosmosdb-environments
+name: compare-cosmosdb-environments
 description: "Compare Cosmosdb Environments using authorized Azure configuration and telemetry."
 ---
 

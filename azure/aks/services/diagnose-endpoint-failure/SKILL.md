@@ -1,5 +1,5 @@
 ---
-name: azure-aks-services-diagnose-endpoint-failure
+name: diagnose-endpoint-failure
 description: "Diagnose Endpoint Failure using authorized Azure configuration and telemetry."
 ---
 

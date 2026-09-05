@@ -1,5 +1,5 @@
 ---
-name: azure-cache-redis-audit-ttl-policy
+name: audit-ttl-policy
 description: "Audit Ttl Policy using authorized Azure configuration and telemetry."
 ---
 

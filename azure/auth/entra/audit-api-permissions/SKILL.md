@@ -1,5 +1,5 @@
 ---
-name: azure-auth-entra-audit-api-permissions
+name: audit-api-permissions
 description: "Audit Api Permissions using authorized Azure configuration and telemetry."
 ---
 

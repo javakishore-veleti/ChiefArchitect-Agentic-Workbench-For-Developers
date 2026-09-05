@@ -1,5 +1,5 @@
 ---
-name: azure-aks-diagnostics-assess-cluster-health
+name: assess-cluster-health
 description: "Assess Cluster Health using authorized Azure configuration and telemetry."
 ---
 

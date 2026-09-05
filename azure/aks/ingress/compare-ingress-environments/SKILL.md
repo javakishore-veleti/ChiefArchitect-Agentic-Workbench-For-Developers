@@ -1,5 +1,5 @@
 ---
-name: azure-aks-ingress-compare-ingress-environments
+name: compare-ingress-environments
 description: "Compare Ingress Environments using authorized Azure configuration and telemetry."
 ---
 
