@@ -1,5 +1,5 @@
 ---
-name: azure-aks-scaling-compare-scaling-environments
+name: compare-scaling-environments
 description: "Compare Scaling Environments using authorized Azure configuration and telemetry."
 ---
 

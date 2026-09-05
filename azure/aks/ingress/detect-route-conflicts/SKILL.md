@@ -1,5 +1,5 @@
 ---
-name: azure-aks-ingress-detect-route-conflicts
+name: detect-route-conflicts
 description: "Detect Route Conflicts using authorized Azure configuration and telemetry."
 ---
 

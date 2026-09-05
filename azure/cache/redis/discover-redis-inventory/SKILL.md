@@ -1,5 +1,5 @@
 ---
-name: azure-cache-redis-discover-redis-inventory
+name: discover-redis-inventory
 description: "Discover Redis Inventory using authorized Azure configuration and telemetry."
 ---
 

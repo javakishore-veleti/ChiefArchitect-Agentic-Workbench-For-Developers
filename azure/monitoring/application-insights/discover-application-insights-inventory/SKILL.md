@@ -1,5 +1,5 @@
 ---
-name: azure-monitoring-application-insights-discover-application-insights-inventory
+name: discover-application-insights-inventory
 description: "Discover Application Insights Inventory using authorized Azure configuration and telemetry."
 ---
 

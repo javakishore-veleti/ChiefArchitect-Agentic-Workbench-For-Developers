@@ -1,5 +1,5 @@
 ---
-name: azure-acr-trace-image-provenance
+name: trace-image-provenance
 description: "Trace Image Provenance using authorized Azure configuration and telemetry."
 ---
 

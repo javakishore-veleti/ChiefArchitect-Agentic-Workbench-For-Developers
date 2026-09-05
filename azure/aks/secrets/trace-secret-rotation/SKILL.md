@@ -1,5 +1,5 @@
 ---
-name: azure-aks-secrets-trace-secret-rotation
+name: trace-secret-rotation
 description: "Trace Secret Rotation using authorized Azure configuration and telemetry."
 ---
 

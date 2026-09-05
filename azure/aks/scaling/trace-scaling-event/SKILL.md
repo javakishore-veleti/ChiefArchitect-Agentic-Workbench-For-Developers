@@ -1,5 +1,5 @@
 ---
-name: azure-aks-scaling-trace-scaling-event
+name: trace-scaling-event
 description: "Trace Scaling Event using authorized Azure configuration and telemetry."
 ---
 

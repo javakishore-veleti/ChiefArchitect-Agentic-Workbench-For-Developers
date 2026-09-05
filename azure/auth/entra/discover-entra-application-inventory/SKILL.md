@@ -1,5 +1,5 @@
 ---
-name: azure-auth-entra-discover-entra-application-inventory
+name: discover-entra-application-inventory
 description: "Discover Entra Application Inventory using authorized Azure configuration and telemetry."
 ---
 

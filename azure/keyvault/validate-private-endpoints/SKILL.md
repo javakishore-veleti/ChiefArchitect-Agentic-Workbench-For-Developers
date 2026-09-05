@@ -1,5 +1,5 @@
 ---
-name: azure-keyvault-validate-private-endpoints
+name: validate-private-endpoints
 description: "Validate Private Endpoints using authorized Azure configuration and telemetry."
 ---
 

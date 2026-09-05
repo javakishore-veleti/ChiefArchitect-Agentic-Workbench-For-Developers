@@ -1,5 +1,5 @@
 ---
-name: azure-acr-map-images-to-workloads
+name: map-images-to-workloads
 description: "Map Images To Workloads using authorized Azure configuration and telemetry."
 ---
 

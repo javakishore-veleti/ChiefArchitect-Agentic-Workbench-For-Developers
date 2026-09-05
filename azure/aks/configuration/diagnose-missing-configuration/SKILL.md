@@ -1,5 +1,5 @@
 ---
-name: azure-aks-configuration-diagnose-missing-configuration
+name: diagnose-missing-configuration
 description: "Diagnose Missing Configuration using authorized Azure configuration and telemetry."
 ---
 

@@ -1,5 +1,5 @@
 ---
-name: azure-aks-ingress-validate-ingress-configuration
+name: validate-ingress-configuration
 description: "Validate Ingress Configuration using authorized Azure configuration and telemetry."
 ---
 

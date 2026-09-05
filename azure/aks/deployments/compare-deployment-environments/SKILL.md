@@ -1,5 +1,5 @@
 ---
-name: azure-aks-deployments-compare-deployment-environments
+name: compare-deployment-environments
 description: "Compare Deployment Environments using authorized Azure configuration and telemetry."
 ---
 

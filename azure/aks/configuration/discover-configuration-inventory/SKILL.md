@@ -1,5 +1,5 @@
 ---
-name: azure-aks-configuration-discover-configuration-inventory
+name: discover-configuration-inventory
 description: "Discover Configuration Inventory using authorized Azure configuration and telemetry."
 ---
 

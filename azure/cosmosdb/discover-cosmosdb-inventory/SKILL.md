@@ -1,5 +1,5 @@
 ---
-name: azure-cosmosdb-discover-cosmosdb-inventory
+name: discover-cosmosdb-inventory
 description: "Discover Cosmosdb Inventory using authorized Azure configuration and telemetry."
 ---
 

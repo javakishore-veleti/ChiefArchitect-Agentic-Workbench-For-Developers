@@ -1,5 +1,5 @@
 ---
-name: azure-aks-diagnostics-diagnose-pending-pods
+name: diagnose-pending-pods
 description: "Diagnose Pending Pods using authorized Azure configuration and telemetry."
 ---
 

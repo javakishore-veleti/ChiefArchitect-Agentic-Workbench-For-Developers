@@ -1,5 +1,5 @@
 ---
-name: azure-auth-entra-detect-expiring-credentials
+name: detect-expiring-credentials
 description: "Detect Expiring Credentials using authorized Azure configuration and telemetry."
 ---
 

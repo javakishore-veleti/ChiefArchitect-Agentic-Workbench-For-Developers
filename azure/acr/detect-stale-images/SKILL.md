@@ -1,5 +1,5 @@
 ---
-name: azure-acr-detect-stale-images
+name: detect-stale-images
 description: "Detect Stale Images using authorized Azure configuration and telemetry."
 ---
 

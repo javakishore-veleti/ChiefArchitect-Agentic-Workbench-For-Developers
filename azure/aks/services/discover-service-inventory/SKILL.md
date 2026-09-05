@@ -1,5 +1,5 @@
 ---
-name: azure-aks-services-discover-service-inventory
+name: discover-service-inventory
 description: "Discover Service Inventory using authorized Azure configuration and telemetry."
 ---
 

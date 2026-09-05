@@ -1,5 +1,5 @@
 ---
-name: azure-cache-redis-detect-memory-pressure
+name: detect-memory-pressure
 description: "Detect Memory Pressure using authorized Azure configuration and telemetry."
 ---
 

@@ -1,5 +1,5 @@
 ---
-name: azure-auth-entra-diagnose-authorization-failure
+name: diagnose-authorization-failure
 description: "Diagnose Authorization Failure using authorized Azure configuration and telemetry."
 ---
 

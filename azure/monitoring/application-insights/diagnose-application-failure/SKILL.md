@@ -1,5 +1,5 @@
 ---
-name: azure-monitoring-application-insights-diagnose-application-failure
+name: diagnose-application-failure
 description: "Diagnose Application Failure using authorized Azure configuration and telemetry."
 ---
 

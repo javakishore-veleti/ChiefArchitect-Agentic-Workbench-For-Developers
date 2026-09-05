@@ -1,5 +1,5 @@
 ---
-name: azure-aks-scaling-diagnose-pod-scaling
+name: diagnose-pod-scaling
 description: "Diagnose Pod Scaling using authorized Azure configuration and telemetry."
 ---
 

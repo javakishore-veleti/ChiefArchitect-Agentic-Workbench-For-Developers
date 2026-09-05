@@ -1,5 +1,5 @@
 ---
-name: azure-aks-scaling-detect-capacity-risk
+name: detect-capacity-risk
 description: "Detect Capacity Risk using authorized Azure configuration and telemetry."
 ---
 

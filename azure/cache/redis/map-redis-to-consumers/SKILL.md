@@ -1,5 +1,5 @@
 ---
-name: azure-cache-redis-map-redis-to-consumers
+name: map-redis-to-consumers
 description: "Map Redis To Consumers using authorized Azure configuration and telemetry."
 ---
 
