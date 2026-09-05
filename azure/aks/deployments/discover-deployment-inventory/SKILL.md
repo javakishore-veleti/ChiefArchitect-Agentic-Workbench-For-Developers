@@ -1,5 +1,5 @@
 ---
-name: azure-aks-deployments-discover-deployment-inventory
+name: discover-deployment-inventory
 description: "Discover Deployment Inventory using authorized Azure configuration and telemetry."
 ---
 

@@ -1,5 +1,5 @@
 ---
-name: azure-monitoring-application-insights-compare-service-reliability
+name: compare-service-reliability
 description: "Compare Service Reliability using authorized Azure configuration and telemetry."
 ---
 

@@ -1,5 +1,5 @@
 ---
-name: azure-cosmosdb-audit-data-access
+name: audit-data-access
 description: "Audit Data Access using authorized Azure configuration and telemetry."
 ---
 

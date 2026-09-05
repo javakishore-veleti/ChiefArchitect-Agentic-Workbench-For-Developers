@@ -1,5 +1,5 @@
 ---
-name: azure-acr-validate-retention-policy
+name: validate-retention-policy
 description: "Validate Retention Policy using authorized Azure configuration and telemetry."
 ---
 

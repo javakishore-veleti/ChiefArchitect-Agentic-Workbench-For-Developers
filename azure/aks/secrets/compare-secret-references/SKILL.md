@@ -1,5 +1,5 @@
 ---
-name: azure-aks-secrets-compare-secret-references
+name: compare-secret-references
 description: "Compare Secret References using authorized Azure configuration and telemetry."
 ---
 

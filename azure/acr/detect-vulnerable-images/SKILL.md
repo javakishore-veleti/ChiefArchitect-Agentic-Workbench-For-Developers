@@ -1,5 +1,5 @@
 ---
-name: azure-acr-detect-vulnerable-images
+name: detect-vulnerable-images
 description: "Detect Vulnerable Images using authorized Azure configuration and telemetry."
 ---
 

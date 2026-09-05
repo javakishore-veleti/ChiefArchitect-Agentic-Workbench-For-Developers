@@ -1,5 +1,5 @@
 ---
-name: azure-aks-scaling-diagnose-cluster-scaling
+name: diagnose-cluster-scaling
 description: "Diagnose Cluster Scaling using authorized Azure configuration and telemetry."
 ---
 

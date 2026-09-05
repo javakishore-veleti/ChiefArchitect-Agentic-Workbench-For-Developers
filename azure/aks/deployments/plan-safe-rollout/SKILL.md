@@ -1,5 +1,5 @@
 ---
-name: azure-aks-deployments-plan-safe-rollout
+name: plan-safe-rollout
 description: "Plan Safe Rollout using authorized Azure configuration and telemetry."
 ---
 

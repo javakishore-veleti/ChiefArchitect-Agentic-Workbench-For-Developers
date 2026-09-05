@@ -1,5 +1,5 @@
 ---
-name: azure-aks-diagnostics-correlate-events-logs-traces
+name: correlate-events-logs-traces
 description: "Correlate Events Logs Traces using authorized Azure configuration and telemetry."
 ---
 

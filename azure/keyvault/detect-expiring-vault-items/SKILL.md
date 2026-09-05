@@ -1,5 +1,5 @@
 ---
-name: azure-keyvault-detect-expiring-vault-items
+name: detect-expiring-vault-items
 description: "Detect Expiring Vault Items using authorized Azure configuration and telemetry."
 ---
 

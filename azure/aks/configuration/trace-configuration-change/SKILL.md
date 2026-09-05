@@ -1,5 +1,5 @@
 ---
-name: azure-aks-configuration-trace-configuration-change
+name: trace-configuration-change
 description: "Trace Configuration Change using authorized Azure configuration and telemetry."
 ---
 

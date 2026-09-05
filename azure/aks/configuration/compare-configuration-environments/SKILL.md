@@ -1,5 +1,5 @@
 ---
-name: azure-aks-configuration-compare-configuration-environments
+name: compare-configuration-environments
 description: "Compare Configuration Environments using authorized Azure configuration and telemetry."
 ---
 

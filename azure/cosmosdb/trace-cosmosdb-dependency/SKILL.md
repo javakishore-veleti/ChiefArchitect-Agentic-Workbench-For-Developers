@@ -1,5 +1,5 @@
 ---
-name: azure-cosmosdb-trace-cosmosdb-dependency
+name: trace-cosmosdb-dependency
 description: "Trace Cosmosdb Dependency using authorized Azure configuration and telemetry."
 ---
 

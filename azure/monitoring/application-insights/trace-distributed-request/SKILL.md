@@ -1,5 +1,5 @@
 ---
-name: azure-monitoring-application-insights-trace-distributed-request
+name: trace-distributed-request
 description: "Trace Distributed Request using authorized Azure configuration and telemetry."
 ---
 

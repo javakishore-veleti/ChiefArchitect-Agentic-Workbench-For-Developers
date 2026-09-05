@@ -1,5 +1,5 @@
 ---
-name: azure-keyvault-map-vault-items-to-consumers
+name: map-vault-items-to-consumers
 description: "Map Vault Items To Consumers using authorized Azure configuration and telemetry."
 ---
 

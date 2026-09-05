@@ -1,5 +1,5 @@
 ---
-name: azure-aks-services-trace-service-traffic
+name: trace-service-traffic
 description: "Trace Service Traffic using authorized Azure configuration and telemetry."
 ---
 

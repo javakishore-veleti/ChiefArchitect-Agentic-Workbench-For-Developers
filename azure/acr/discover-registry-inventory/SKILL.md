@@ -1,5 +1,5 @@
 ---
-name: azure-acr-discover-registry-inventory
+name: discover-registry-inventory
 description: "Discover Registry Inventory using authorized Azure configuration and telemetry."
 ---
 

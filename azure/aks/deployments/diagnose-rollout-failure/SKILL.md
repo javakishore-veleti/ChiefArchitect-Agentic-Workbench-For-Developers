@@ -1,5 +1,5 @@
 ---
-name: azure-aks-deployments-diagnose-rollout-failure
+name: diagnose-rollout-failure
 description: "Diagnose Rollout Failure using authorized Azure configuration and telemetry."
 ---
 

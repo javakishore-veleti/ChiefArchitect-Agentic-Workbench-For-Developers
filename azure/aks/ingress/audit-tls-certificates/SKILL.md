@@ -1,5 +1,5 @@
 ---
-name: azure-aks-ingress-audit-tls-certificates
+name: audit-tls-certificates
 description: "Audit Tls Certificates using authorized Azure configuration and telemetry."
 ---
 

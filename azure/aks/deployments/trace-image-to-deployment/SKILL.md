@@ -1,5 +1,5 @@
 ---
-name: azure-aks-deployments-trace-image-to-deployment
+name: trace-image-to-deployment
 description: "Trace Image To Deployment using authorized Azure configuration and telemetry."
 ---
 

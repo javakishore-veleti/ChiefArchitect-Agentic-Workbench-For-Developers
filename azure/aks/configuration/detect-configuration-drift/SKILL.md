@@ -1,5 +1,5 @@
 ---
-name: azure-aks-configuration-detect-configuration-drift
+name: detect-configuration-drift
 description: "Detect Configuration Drift using authorized Azure configuration and telemetry."
 ---
 

@@ -1,5 +1,5 @@
 ---
-name: azure-cosmosdb-diagnose-request-throttling
+name: diagnose-request-throttling
 description: "Diagnose Request Throttling using authorized Azure configuration and telemetry."
 ---
 

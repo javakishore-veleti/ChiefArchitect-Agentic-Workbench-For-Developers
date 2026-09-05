@@ -1,5 +1,5 @@
 ---
-name: azure-aks-configuration-validate-configuration-references
+name: validate-configuration-references
 description: "Validate Configuration References using authorized Azure configuration and telemetry."
 ---
 

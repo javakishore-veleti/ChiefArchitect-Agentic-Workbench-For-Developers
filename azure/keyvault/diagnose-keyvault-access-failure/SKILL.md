@@ -1,5 +1,5 @@
 ---
-name: azure-keyvault-diagnose-keyvault-access-failure
+name: diagnose-keyvault-access-failure
 description: "Diagnose Keyvault Access Failure using authorized Azure configuration and telemetry."
 ---
 

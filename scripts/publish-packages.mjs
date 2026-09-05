@@ -38,9 +38,11 @@ for (const directory of order) {
   }
 
   console.log(`Publishing ${pkg.name}@${pkg.version} from ${directory}.`);
+  const prerelease = pkg.version.includes("-");
+  const distTag = prerelease ? pkg.version.split("-", 2)[1].split(".", 1)[0] : "latest";
   const publish = spawnSync(
     "npm",
-    ["publish", "--access", "public", "--provenance"],
+    ["publish", "--access", "public", "--provenance", "--tag", distTag],
     { cwd: directory, stdio: "inherit" }
   );
   if (publish.status !== 0) process.exit(publish.status ?? 1);

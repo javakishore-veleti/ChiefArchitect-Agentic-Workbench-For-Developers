@@ -1,5 +1,5 @@
 ---
-name: diagnose-shopify-customer
+name: diagnose-customer
 description: Diagnose Shopify customer identity, profile, access, and cross-storefront failures while keeping Admin, Storefront, and Customer Account API evidence separate.
 ---
 

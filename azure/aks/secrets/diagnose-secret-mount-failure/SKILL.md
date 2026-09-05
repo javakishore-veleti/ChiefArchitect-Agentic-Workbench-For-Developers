@@ -1,5 +1,5 @@
 ---
-name: azure-aks-secrets-diagnose-secret-mount-failure
+name: diagnose-secret-mount-failure
 description: "Diagnose Secret Mount Failure using authorized Azure configuration and telemetry."
 ---
 

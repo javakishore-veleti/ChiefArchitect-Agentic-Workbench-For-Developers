@@ -1,5 +1,5 @@
 ---
-name: azure-aks-diagnostics-trace-cross-service-request
+name: trace-cross-service-request
 description: "Trace Cross Service Request using authorized Azure configuration and telemetry."
 ---
 

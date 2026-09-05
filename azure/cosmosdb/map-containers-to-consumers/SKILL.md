@@ -1,5 +1,5 @@
 ---
-name: azure-cosmosdb-map-containers-to-consumers
+name: map-containers-to-consumers
 description: "Map Containers To Consumers using authorized Azure configuration and telemetry."
 ---
 

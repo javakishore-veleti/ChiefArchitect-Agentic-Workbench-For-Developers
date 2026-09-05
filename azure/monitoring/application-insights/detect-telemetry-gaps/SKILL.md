@@ -1,5 +1,5 @@
 ---
-name: azure-monitoring-application-insights-detect-telemetry-gaps
+name: detect-telemetry-gaps
 description: "Detect Telemetry Gaps using authorized Azure configuration and telemetry."
 ---
 

@@ -1,5 +1,5 @@
 ---
-name: azure-aks-deployments-detect-deployment-drift
+name: detect-deployment-drift
 description: "Detect Deployment Drift using authorized Azure configuration and telemetry."
 ---
 

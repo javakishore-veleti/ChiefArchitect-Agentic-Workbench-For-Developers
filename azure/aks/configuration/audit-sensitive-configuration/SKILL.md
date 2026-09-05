@@ -1,5 +1,5 @@
 ---
-name: azure-aks-configuration-audit-sensitive-configuration
+name: audit-sensitive-configuration
 description: "Audit Sensitive Configuration using authorized Azure configuration and telemetry."
 ---
 

@@ -1,5 +1,5 @@
 ---
-name: azure-aks-secrets-map-secrets-to-workloads
+name: map-secrets-to-workloads
 description: "Map Secrets To Workloads using authorized Azure configuration and telemetry."
 ---
 

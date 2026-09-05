@@ -1,5 +1,5 @@
 ---
-name: azure-aks-ingress-discover-ingress-inventory
+name: discover-ingress-inventory
 description: "Discover Ingress Inventory using authorized Azure configuration and telemetry."
 ---
 

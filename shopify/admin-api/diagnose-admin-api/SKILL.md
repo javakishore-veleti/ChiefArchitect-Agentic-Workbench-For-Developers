@@ -1,5 +1,5 @@
 ---
-name: shopify-admin-api
+name: diagnose-admin-api
 description: Diagnose Shopify Admin GraphQL queries, mutations, permissions, versions, filtering, throttling, timeouts and inconsistent results.
 ---
 

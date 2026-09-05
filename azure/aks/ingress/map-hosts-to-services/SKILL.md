@@ -1,5 +1,5 @@
 ---
-name: azure-aks-ingress-map-hosts-to-services
+name: map-hosts-to-services
 description: "Map Hosts To Services using authorized Azure configuration and telemetry."
 ---
 
