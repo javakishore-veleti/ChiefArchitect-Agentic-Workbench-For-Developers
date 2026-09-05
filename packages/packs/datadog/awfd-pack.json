@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "package": "@javakishore-veleti/awfd-datadog",
+  "domain": "datadog",
+  "payloadRoot": "dist",
+  "skills": [
+    {
+      "id": "awfd-datadog",
+      "canonical": "datadog/diagnose-datadog",
+      "coordinate": "awfd:datadog"
+    }
+  ],
+  "files": [
+    ".agents/skills/awfd-datadog/SKILL.md",
+    ".claude/skills/awfd-datadog/SKILL.md",
+    ".github/skills/awfd-datadog/SKILL.md",
+    "datadog/diagnose-datadog/knowledge/evidence.jsonl",
+    "datadog/diagnose-datadog/patterns/ai-observability.md",
+    "datadog/diagnose-datadog/patterns/cross-signal.md",
+    "datadog/diagnose-datadog/patterns/dashboards-monitors.md",
+    "datadog/diagnose-datadog/patterns/incidents.md",
+    "datadog/diagnose-datadog/patterns/index.json",
+    "datadog/diagnose-datadog/patterns/logs.md",
+    "datadog/diagnose-datadog/patterns/metrics.md",
+    "datadog/diagnose-datadog/patterns/rum-synthetics.md",
+    "datadog/diagnose-datadog/patterns/security-cost.md",
+    "datadog/diagnose-datadog/patterns/traces-apm.md",
+    "datadog/diagnose-datadog/scripts/classify-issue.mjs",
+    "datadog/diagnose-datadog/scripts/redact-evidence.mjs",
+    "datadog/diagnose-datadog/scripts/resolve-context.mjs",
+    "datadog/diagnose-datadog/scripts/validate-plan.mjs",
+    "datadog/diagnose-datadog/SKILL.md",
+    "datadog/diagnose-datadog/tests/foundation.test.mjs",
+    "datadog/shared/config/datadog-config.example.json",
+    "datadog/shared/config/README.md"
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "package": "@javakishore-veleti/awfd-spring-boot",
+  "domain": "spring-boot",
+  "payloadRoot": "dist",
+  "skills": [
+    {
+      "id": "awfd-spring-boot",
+      "canonical": "spring-boot/diagnose-spring-boot",
+      "coordinate": "awfd:spring-boot"
+    }
+  ],
+  "files": [
+    ".agents/skills/awfd-spring-boot/SKILL.md",
+    ".claude/skills/awfd-spring-boot/SKILL.md",
+    ".github/skills/awfd-spring-boot/SKILL.md",
+    "spring-boot/diagnose-spring-boot/knowledge/config-testing.jsonl",
+    "spring-boot/diagnose-spring-boot/knowledge/data-transactions-cache.jsonl",
+    "spring-boot/diagnose-spring-boot/knowledge/messaging-batch.jsonl",
+    "spring-boot/diagnose-spring-boot/knowledge/observability-runtime.jsonl",
+    "spring-boot/diagnose-spring-boot/knowledge/web-security.jsonl",
+    "spring-boot/diagnose-spring-boot/patterns/actuator-observability.md",
+    "spring-boot/diagnose-spring-boot/patterns/batch.md",
+    "spring-boot/diagnose-spring-boot/patterns/caching.md",
+    "spring-boot/diagnose-spring-boot/patterns/configuration.md",
+    "spring-boot/diagnose-spring-boot/patterns/data-jpa.md",
+    "spring-boot/diagnose-spring-boot/patterns/deployment-runtime.md",
+    "spring-boot/diagnose-spring-boot/patterns/index.json",
+    "spring-boot/diagnose-spring-boot/patterns/messaging-integration.md",
+    "spring-boot/diagnose-spring-boot/patterns/security.md",
+    "spring-boot/diagnose-spring-boot/patterns/testing.md",
+    "spring-boot/diagnose-spring-boot/patterns/transactions.md",
+    "spring-boot/diagnose-spring-boot/patterns/web-api.md",
+    "spring-boot/diagnose-spring-boot/scripts/classify-spring-issue.mjs",
+    "spring-boot/diagnose-spring-boot/scripts/compare-contexts.mjs",
+    "spring-boot/diagnose-spring-boot/scripts/summarize-diagnostics.mjs",
+    "spring-boot/diagnose-spring-boot/scripts/validate-diagnostic-plan.mjs",
+    "spring-boot/diagnose-spring-boot/SKILL.md",
+    "spring-boot/diagnose-spring-boot/tests/config-testing-evidence.test.mjs",
+    "spring-boot/diagnose-spring-boot/tests/foundation.test.mjs",
+    "spring-boot/diagnose-spring-boot/tests/messaging-batch.test.mjs",
+    "spring-boot/diagnose-spring-boot/tests/observability-runtime-evidence.test.mjs",
+    "spring-boot/diagnose-spring-boot/tests/web-security-evidence.test.mjs",
+    "spring-boot/shared/config/load-config.mjs",
+    "spring-boot/shared/config/resolve-context.mjs",
+    "spring-boot/shared/config/spring-boot-config.example.json",
+    "spring-boot/shared/config/spring-boot-config.schema.json",
+    "spring-boot/shared/vocabulary/application-vocabulary.example.json",
+    "spring-boot/shared/vocabulary/application-vocabulary.schema.json",
+    "spring-boot/shared/vocabulary/resolve-term.mjs"
+  ]
+}

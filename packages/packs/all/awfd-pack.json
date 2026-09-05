@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "package": "@javakishore-veleti/awfd-all",
+  "composition": [
+    "@javakishore-veleti/awfd-angular",
+    "@javakishore-veleti/awfd-azure",
+    "@javakishore-veleti/awfd-databricks",
+    "@javakishore-veleti/awfd-datadog",
+    "@javakishore-veleti/awfd-github-actions",
+    "@javakishore-veleti/awfd-postgres",
+    "@javakishore-veleti/awfd-redis",
+    "@javakishore-veleti/awfd-shopify",
+    "@javakishore-veleti/awfd-spring-boot"
+  ]
+}

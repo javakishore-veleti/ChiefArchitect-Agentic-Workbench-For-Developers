@@ -1,0 +1,31 @@
+{
+  "name": "@javakishore-veleti/awfd-azure",
+  "version": "0.1.0",
+  "description": "AWFD Azure agent skill pack.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "files": [
+    "dist/",
+    "awfd-pack.json",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "node ../../../scripts/build-packs.mjs",
+    "prepack": "node ../../../scripts/build-packs.mjs azure"
+  },
+  "dependencies": {
+    "@javakishore-veleti/awfd": "0.1.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/javakishore-veleti/ChiefArchitect-Agentic-Workbench-For-Developers.git",
+    "directory": "packages/packs/azure"
+  },
+  "engines": {
+    "node": ">=22.14"
+  }
+}

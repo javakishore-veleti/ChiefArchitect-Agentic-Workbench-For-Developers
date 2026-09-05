@@ -1,0 +1,21 @@
+{
+  "name": "@javakishore-veleti/awfd-monorepo",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Build and release workspace for Agentic Workbench for Developers skill packs.",
+  "type": "module",
+  "workspaces": [
+    "packages/awfd",
+    "packages/packs/*"
+  ],
+  "scripts": {
+    "build:packs": "node scripts/build-packs.mjs",
+    "test": "node scripts/run-tests.mjs",
+    "pack:check": "npm run build:packs && npm pack --dry-run --workspaces --if-present",
+    "release:check": "npm run build:packs && npm test && npm run pack:check"
+  },
+  "engines": {
+    "node": ">=24",
+    "npm": ">=11.5.1"
+  }
+}
